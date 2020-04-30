@@ -44,13 +44,10 @@ setup(
     install_requires=[
         'scancode-toolkit',
         'attr',
-        'scancode-ctags',
-        'scancode-dwarfdump',
-        'scancode-readelf',
     ],
     entry_points={
         'scancode_scan': [
-            'scancode-keywords-scan = keywords-scan:keywords-scan:KeywordsLinesScanner',
+            'keywordsscan = keywords_scan.keywords_scan:KeywordsLinesScanner',
 
         ],
     }

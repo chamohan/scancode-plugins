@@ -21,14 +21,15 @@ def file_lines_count(location, keywords):
     if not T.is_source:
         return code, comment
 
+    search_codes = ['Gibraltar', 'gibraltar']
+
     with open(location, 'rb') as lines:
         for line in lines:
-            if any(word in line for word in keywords):
-                    comment += 1
-                else:
-                    code += 1
+            if any(word in line for word in search_codes):
+                comment += 1
+            else:
+                code += 1
     return code, comment
-
 
 def code_lines_count(location):
     code, _comment = file_lines_count(location)
