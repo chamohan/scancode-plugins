@@ -60,6 +60,7 @@
           <th>keywordsline</th>
           <th>no_licenses</th>
           <th>license_modification</th>
+          <th>Licence Approval Status</th>
         </tr>
       </thead>
       <tbody>
@@ -82,6 +83,7 @@
               <td>{{ row.keywordsline }}</td>
               <td>{{ row.no_licenses }}</td>
               <td style="color:red;">{{ row.licence_modifications.modinfo }}</td>
+              <td>{{ row.license_policy.label }}</td>
             </tr>
         {% endfor %}
       </tbody>
