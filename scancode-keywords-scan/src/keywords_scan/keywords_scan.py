@@ -74,7 +74,7 @@ def file_lines_count(location):
     if not T.is_source:
         return code, keywords
 
-    search_list = ['Gibraltar']
+    search_list = ['Gibraltar', 'Phantom']
 
     with open(location, 'rb') as lines:
 
