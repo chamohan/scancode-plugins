@@ -7,26 +7,21 @@ import attr
 from commoncode.filetype import counter
 from commoncode.functional import memoize
 from commoncode import filetype
-
+from commoncode import fileutils
 from collections import OrderedDict
 from functools import partial
 from itertools import chain
 
-from commoncode import fileutils
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
 from scancode import SCAN_GROUP
 from typecode import contenttype
 
-#from sourcecode import kernel
-#from sourcecode.metrics import file_lines_count
-
-
 @scan_impl
 class   KeywordsLinesScanner(ScanPlugin):
     """
-        Scan the number of lines of code and lines of the keywordss.
+        Scan the number of lines of code and lines of the keywords
     """
     resource_attributes = OrderedDict(
         codelines=attr.ib(default=attr.Factory(int), repr=False),
@@ -60,15 +55,18 @@ def get_keywordsscan(location, **kwargs):
     )
 
 
-#@memoize
 def file_lines_count(location):
     """
-    Return a tuple of (code, keywords) line counts in a source text file at
-    `location`. Memoization guarantees that we do only one pass on a file.
+    Return a tuple of (code, keywords, matching_keywords, line_numbers) line counts in a source text file at
+    `location`. 
     """
 
     code = 0
     keywords = 0
+    matching_keywords = []
+    line_numbers = []
+    line_no = 0
+    matched_lines = []
 
     T = typecode.contenttype.get_type(location)
     if not T.is_source:
@@ -82,9 +80,15 @@ def file_lines_count(location):
             line = line.decode('utf-8')
             if re.compile('|'.join(search_list),re.IGNORECASE).search(line): 
                 keywords += 1
+                line_no += 1
+                line_numbers.append(line_no)  
+                matched_lines.append(line)
+                print("line no %d of file %s has keyword - %s" %(line_no, lines,line))
             else:
                 code += 1
 
+    print(line_numbers)
+    print(lines)
     return code, keywords
 
 def code_lines_count(location):
