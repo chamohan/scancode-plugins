@@ -81,7 +81,9 @@
               <td>{{ row.is_script }}</td>
               <td style="color:red;">{{ row.licence_modifications.modinfo }}</td>
               <td style="color:red;">{{ row.keywordsline }}</td>
-              <td style="color:red;">{{ row.matchedlines }}</td>
+              {% for match in row.matchedlines %}
+              <td style="color:red;">{{ row.match }}</td>
+              {% endfor %}
             </tr>
         {% endfor %}
       </tbody>
