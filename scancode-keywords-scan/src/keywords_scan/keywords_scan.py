@@ -26,7 +26,7 @@ class   KeywordsLinesScanner(ScanPlugin):
     resource_attributes = OrderedDict(
         codelines=attr.ib(default=attr.Factory(int), repr=False),
         keywordsline=attr.ib(default=attr.Factory(int), repr=False),
-        matchedlines=attr.ib(default=attr.Factory(list)),
+        matchedlines=attr.ib(default=attr.Factory(list), repr=False),
 
     )
 
@@ -67,7 +67,6 @@ def file_lines_count(location):
     code = 0
     keywords = 0
     matching_keywords = []
-    matched_test = None
     line_numbers = []
     line_no = 0
     matched_lines = []
@@ -82,12 +81,13 @@ def file_lines_count(location):
 
         for line in lines:
             line = line.decode('utf-8')
+            line_no += 1
             if re.compile('|'.join(search_list),re.IGNORECASE).search(line): 
                 keywords += 1
-                line_no += 1
+                #line_no += 1
                 line_numbers.append(line_no)  
-                matched_test = print("line no %d of file %s has keyword - %s" %(line_no, lines,line))
-                matched_lines.append(line)
+                matched_test = "line no %d of file %s has keyword - %s" %(line_no, lines, line)
+                matched_lines.append(matched_test)
             else:
                 code += 1
 
@@ -99,18 +99,18 @@ def code_lines_count(location):
 
 
 def keywords_lines_count(location):
-    _code, keywords, _matched_lines = file_lines_count(location)
+    _code, keywords, matched_lines = file_lines_count(location)
     return keywords
 
-def matched_lines_count(location):
-    _code, _keywords, matched_lines = file_lines_count(location)
+def matched_lines(location):
+    code, _keywords, matched_lines = file_lines_count(location)
     return matched_lines 
 
 
 filetype.counting_functions.update({
     'code_lines': code_lines_count,
     'keywords_lines': keywords_lines_count,
-    'matched_lines': matched_lines_count
+    'matched_lines': matched_lines
 })
 
 
@@ -130,10 +130,7 @@ def get_keywords_lines_count(location):
     return counter(location, 'keywords_lines')
 
 
-def get_matched_lines_count(location):
-    """
-    Return the matched lines  in the whole directory
-    tree at `location`. Use 0 if `location` is not a source file.
-    """
+def get_matched_lines(location):
+
     return counter(location, 'matched_lines')
 
