@@ -26,6 +26,7 @@ class   KeywordsLinesScanner(ScanPlugin):
     resource_attributes = OrderedDict(
         codelines=attr.ib(default=attr.Factory(int), repr=False),
         keywordsline=attr.ib(default=attr.Factory(int), repr=False),
+        matchedlines=attr.ib(default=attr.Factory(list)),
 
     )
 
@@ -47,11 +48,13 @@ class   KeywordsLinesScanner(ScanPlugin):
 def get_keywordsscan(location, **kwargs):
     codelines = 0
     keywordsline = 0
-    codelines, keywordsline = file_lines_count(location)
+    matchedlines = []
+    codelines, keywordsline, matchedlines = file_lines_count(location)
 
     return OrderedDict(
         codelines=codelines,
-        keywordsline=keywordsline
+        keywordsline=keywordsline,
+        matchedlines=matchedlines
     )
 
 
@@ -64,13 +67,14 @@ def file_lines_count(location):
     code = 0
     keywords = 0
     matching_keywords = []
+    matched_test = None
     line_numbers = []
     line_no = 0
     matched_lines = []
 
     T = typecode.contenttype.get_type(location)
     if not T.is_source:
-        return code, keywords
+        return code, keywords, matched_lines
 
     search_list = ['Gibraltar', 'Phantom']
 
@@ -82,28 +86,31 @@ def file_lines_count(location):
                 keywords += 1
                 line_no += 1
                 line_numbers.append(line_no)  
+                matched_test = print("line no %d of file %s has keyword - %s" %(line_no, lines,line))
                 matched_lines.append(line)
-                print("line no %d of file %s has keyword - %s" %(line_no, lines,line))
             else:
                 code += 1
 
-    print(line_numbers)
-    print(lines)
-    return code, keywords
+    return code, keywords, matched_lines
 
 def code_lines_count(location):
-    code, _keywords = file_lines_count(location)
+    code, _keywords, matched_lines = file_lines_count(location)
     return code
 
 
 def keywords_lines_count(location):
-    _code, keywords = file_lines_count(location)
+    _code, keywords, _matched_lines = file_lines_count(location)
     return keywords
+
+def matched_lines_count(location):
+    _code, _keywords, matched_lines = file_lines_count(location)
+    return matched_lines 
 
 
 filetype.counting_functions.update({
     'code_lines': code_lines_count,
-    'keywords_lines': keywords_lines_count
+    'keywords_lines': keywords_lines_count,
+    'matched_lines': matched_lines_count
 })
 
 
@@ -121,3 +128,12 @@ def get_keywords_lines_count(location):
     tree at `location`. Use 0 if `location` is not a source file.
     """
     return counter(location, 'keywords_lines')
+
+
+def get_matched_lines_count(location):
+    """
+    Return the matched lines  in the whole directory
+    tree at `location`. Use 0 if `location` is not a source file.
+    """
+    return counter(location, 'matched_lines')
+
