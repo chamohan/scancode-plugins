@@ -57,10 +57,9 @@
           <th>is_media</th>
           <th>is_source</th>
           <th>is_script</th>
-          <th>No of keywords</th>
-          <th>no_licenses</th>
           <th>license_modification</th>
-          <th>Licence Approval Status</th>
+          <th>keywords Present</th>
+          <th>Matched Lines</th>
         </tr>
       </thead>
       <tbody>
@@ -80,10 +79,9 @@
               <td>{{ row.is_media }}</td>
               <td>{{ row.is_source }}</td>
               <td>{{ row.is_script }}</td>
-              <td>{{ row.keywordsline }}</td>
-              <td>{{ row.no_licenses }}</td>
               <td style="color:red;">{{ row.licence_modifications.modinfo }}</td>
-              <td>{{ row.license_policy.label }}</td>
+              <td style="color:red;">{{ row.keywordsline }}</td>
+              <td style="color:red;">{{ row.matchedlines }}</td>
             </tr>
         {% endfor %}
       </tbody>
