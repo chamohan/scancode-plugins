@@ -86,7 +86,7 @@ def file_lines_count(location):
                 keywords += 1
                 #line_no += 1
                 line_numbers.append(line_no)  
-                matched_test = "line no %d of file %s has keyword - %s" %(line_no, lines, line)
+                matched_test = "line no %d has keyword/keywords - %s" %(line_no, line)
                 matched_lines.append(matched_test)
             else:
                 code += 1
