@@ -15,7 +15,7 @@ scancode  -clpeui  --package --processes 64 --classify --keywordsscan --verbose 
  
 # Your should see the verbose output of the scan
 
-# The result file will be available as result.json and result.html
+# The result file will be available as license-modification-list.html  rocrinfo.json
 
 ```
 
