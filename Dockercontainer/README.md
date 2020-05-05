@@ -7,6 +7,11 @@ Docker run -v /src:/src:ro -v /logs:/logs -v /artifacts:/artifacts -v /statistic
 docker run -it -v `pwd`/src/:/src scancodeimages/amd_scancode
 docker run -it -v /data/chamohan/src:/src -v  /data/chamohan/logs:/logs -v /data/chamohan/artifacts:/artifacts -v /data/chamohan/statistics:/statistics scancodeimages/amd_scancode /bin/bash
 
+
+scancode  -clpeui  --package --processes 64 --classify --keywordsscan --verbose --full-root --json-pp rocrinfo.json /src/rocrinfo --license-policy ./amd_licence_policy.yml --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses  --licence-modifications --custom-output license-modification-list.html --custom-template license-modification-template.html > /logs/logs.txt 2>&1
+
+
+
  
 # Your should see the verbose output of the scan
 
