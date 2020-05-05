@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 export GIT=`which git`
 export PIP=`which pip`
 
