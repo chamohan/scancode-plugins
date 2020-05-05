@@ -1,8 +1,5 @@
-export GIT=`which git`
-export PIP=`which pip`
-
-${GIT} clone https://github.com/chamohan/scancode-plugins.git
-${PIP} install -e scancode-plugins/scancode-keywords-scan/
-${PIP} install -e scancode-plugins/scancode-licence-modifications/
-${PIP} install -e scancode-plugins/scancode-no-licenses/
-{$PIP} install -e scancode-plugins/scancode-only-licenses-titles}/
+git clone https://github.com/chamohan/scancode-plugins.git
+cd scancode-plugins; pip install ./scancode-licence-modifications
+cd scancode-plugins;pip install ./scancode-no-licenses
+cd scancode-plugins;pip install ./scancode-only-licenses-titles
+cd scancode-plugins;pip install ./scancode-keywords-scan
