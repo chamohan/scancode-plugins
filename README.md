@@ -22,6 +22,11 @@ Go to the Plugin Directory
 scancode -clpeui  --package --processes 64 --classify --keywordsscan --verbose --full-root --json-pp roctracer.json ../roctracer  --license-policy ../amd_licence_policy.yml  --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag --licence-modifications --custom-output license-modification-list.html --custom-template license-modification-template.html
 
 
+cancode  -clpeui  --package --processes 64 --classify --keywordsscan --verbose --full-root --json-pp rocrinfo.json /src/rocrinfo --license-policy ./amd_licence_policy.yml --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses  --licence-modifications --custom-output license-modification-list.html --custom-template license-modification-template.html | while IFS= read -r line; do printf '%s %s\n' "$(date)" "$line"; done > /logs/$(date "+%Y.%m.%d-%H.%M.%S")-logfile
+
+
+
+
 
 
 ### To check the overall status
