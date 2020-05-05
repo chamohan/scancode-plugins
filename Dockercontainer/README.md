@@ -5,7 +5,8 @@
 ```sh
 Docker run -v /src:/src:ro -v /logs:/logs -v /artifacts:/artifacts -v /statistics:/statistics scancodeimages/amd_scancode
 docker run -it -v `pwd`/src/:/src scancodeimages/amd_scancode
-docker run -v /data/chamohan/src -v  /data/chamohan/logs:/logs -v /data/chamohan/artifacts:/artifacts -v /data/chamohan/statistics:/statistics scancodeimages/amd_scancode /bin/bash
+docker run -it -v /data/chamohan/src:/src -v  /data/chamohan/logs:/logs -v /data/chamohan/artifacts:/artifacts -v /data/chamohan/statistics:/statistics scancodeimages/amd_scancode /bin/bash
+
  
 # Your should see the verbose output of the scan
 
