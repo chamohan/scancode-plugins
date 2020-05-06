@@ -1,4 +1,4 @@
-# Docker image for AMD Scancode imange
+# Docker image for AMD Scancode image
 
 
 # Getting started
