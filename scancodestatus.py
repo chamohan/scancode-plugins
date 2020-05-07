@@ -23,8 +23,6 @@ with open(filename) as f:
             print(i['keywordsline'])
             print(i['matchedlines'])
             counter = counter + 1
-        else:
-            print("not present")
 
         if i['licenses'] is None:
             no_license = no_license + 1
@@ -32,11 +30,6 @@ with open(filename) as f:
             for j in i['licenses']:
                 try:
                     if j['score'] != 100.0:
-                        #print("file found")
-                        #print(j['score'])
-                        #print(i['path'])
-                        #print(i['licenses'])
-                        #print(i['licence_modifications'])
                         modifications_counter = modifications_counter + 1
                 except Exception:
                     pass
