@@ -78,7 +78,7 @@ if modifications_counter > 0:
     print("The number of Approved Linceses are %s" %(approvedLicenses))
     print("The Total number of issues are %s" %(totalIssues))
     print("Failed")
-    sys.exit(1)
+    sys.exit(totalIssues)
 else:
     print("The number of Approved Linceses are %s" %(approvedLicenses))
     print("Tests Passed")
