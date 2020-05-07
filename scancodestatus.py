@@ -1,10 +1,16 @@
 #!/usr/bin/env python
 # In case of any issue please write chamohan@amd.com
-
 import json
 import sys
+import os
 
-filename = sys.argv[1]
+path = '/artifacts'
+os.chdir(path)
+files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
+
+oldest = files[0]
+#latest  json output file name fron /aritifacts path
+filename = files[-2]
 
 with open(filename) as f:
   data = json.load(f)
