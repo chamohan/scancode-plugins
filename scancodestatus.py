@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # In case of any issue please write chamohan@amd.com
+# Author : Chander
 
 import json
 import sys
@@ -15,6 +16,10 @@ filename = files[-2]
 keywordsCounter = 0
 files_with_license = 0
 files_without_license = 0
+licensePolicy = 0
+approvedLicenses = 0
+prohibitedLicenses = 0
+totalIssues = 0
 
 with open(filename) as f:
     data = json.load(f)
@@ -36,7 +41,21 @@ with open(filename) as f:
             files_without_license = files_without_license + 1
             print("File Name %s is under %s License" %(i['path'],i['no_licenses']))
 
+
+        # Checking Not Approved Licences and Approved License
+
+        if not i['license_policy']:
+            licensePolicy = licensePolicy + 1
+        else:
+            if i['license_policy']['label'] == 'Approved License':
+                approvedLicenses = approvedLicenses + 1
+                print("The file %s has %s" %(i['path'],i['license_policy']['label']))
+            elif i['license_policy']['label'] == 'Prohibited Licenses':
+                prohibitedLicenses = prohibitedLicenses + 1
+                print("The file %s has %s" %(i['path'],i['license_policy']['label']))
+
         # Checking license Modifications in files
+
 
         if i['licenses'] is None:
             no_license = no_license + 1
@@ -44,21 +63,22 @@ with open(filename) as f:
             for j in i['licenses']:
                 try:
                     if j['score'] != 100.0:
-                        #print(j['score'])
-                        #print(i['path'])
-                        #print(i['licenses'])
-                        #print(i['licence_modifications'])
                         modifications_counter = modifications_counter + 1
                 except Exception:
                     pass
 
 
 if modifications_counter > 0:
+    totalIssues = modifications_counter + keywordsCounter + prohibitedLicenses
     print("-----Summary Report------")
     print("The total number of files containing no linceses are %d" %(no_license))
     print("Number of linceses Modifications %d" %(modifications_counter))
     print("The number of times keywords were present in files %s" %(keywordsCounter))
-    print("Tests Failed")
+    print("The number of Prohibited Licenses are %s" %(prohibitedLicenses))
+    print("The number of Approved Linceses are %s" %(approvedLicenses))
+    print("The Total number of issues are %s" %(totalIssues))
+    print("Failed")
     sys.exit(1)
 else:
+    print("The number of Approved Linceses are %s" %(approvedLicenses))
     print("Tests Passed")
