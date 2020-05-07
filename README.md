@@ -17,16 +17,7 @@ Go to the Plugin Directory
 ### To Create HTML reporved of approved, not approved and license modification html report
 
 
-### scancode -clpeui --package --processes 64 --classify --verbose --full-root --json-pp roctracer.json ../roctracer --liceicy ../amd_licence_policy.yml --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text --license-diag --no-licenses --licence-modifications --custom-output white-black-report.html --custom-template white-black-template.html
-
-scancode -clpeui  --package --processes 64 --classify --keywordsscan --verbose --full-root --json-pp roctracer.json ../roctracer  --license-policy ../amd_licence_policy.yml  --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag --licence-modifications --custom-output license-modification-list.html --custom-template license-modification-template.html
-
-
-cancode  -clpeui  --package --processes 64 --classify --keywordsscan --verbose --full-root --json-pp rocrinfo.json /src/rocrinfo --license-policy ./amd_licence_policy.yml --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses  --licence-modifications --custom-output license-modification-list.html --custom-template license-modification-template.html | while IFS= read -r line; do printf '%s %s\n' "$(date)" "$line"; done > /logs/$(date "+%Y.%m.%d-%H.%M.%S")-logfile
-
-
-
-
+### scancode  -clpeui  --package --processes `expr $(nproc --all) - 1` --classify --keywordsscan --verbose --full-root --json-pp /artifacts/$(date "+%Y.%m.%d-%H.%M.%S")-licenses.json /src --license-policy scancode-plugins/amd_licence_policy.yml --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses  --licence-modifications --custom-output /artifacts/$(date "+%Y.%m.%d-%H.%M.%S")-license-modification-report.html --custom-template scancode-plugins/license-modification-template.html >>/logs/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
 
 
 ### To check the overall status
