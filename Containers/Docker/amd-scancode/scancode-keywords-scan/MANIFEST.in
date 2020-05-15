@@ -1,7 +1,7 @@
 graft src
 
 include setup.py
-imclude setup.cfg
+include setup.cfg
 include MANIFEST.in
 include NOTICE
 include apache-2.0.LICENSE
