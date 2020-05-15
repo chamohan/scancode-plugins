@@ -1,9 +1,11 @@
-mkdir Containers/Docker/plugins
+#!/usr/bin/env bash
 export PWD=`pwd`
+mkdir -p ${PWD}/Containers/Docker/plugins
+pluginDir="${PWD}/Containers/Docker/plugins"
+
+
 for d in ${PWD}/Containers/Docker/amd-scancode/scancode-*/;do
       cd "${d}";/bin/bash -c "(python3 setup.py bdist_wheel)"
       sleep 2
-      /usr/bin/cp -R ${d}/dist/* ${PWD}/Containers/Docker/plugins
+      cp -R ${d}/dist/* ${pluginDir}
 done
-
-ls -ltr ${PWD}/Containers/Docker/plugins/
