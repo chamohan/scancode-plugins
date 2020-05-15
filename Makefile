@@ -15,7 +15,7 @@ export $(shell sed 's/=.*//' $(dpl))
 .PHONY: clean 
 
 clean: ## This help.
-	rm -R Containers/Docker/plugins/*
+	rm -R Containers/Docker/plugins/
 	rm -R Containers/Docker/amd-scancode/scancode-*/build/*
 	rm -R Containers/Docker/amd-scancode/scancode-*/dist/*
 
@@ -34,20 +34,8 @@ build-nc: ## Build the container without caching
 	cd Containers/Docker/;docker build --no-cache -t $(APP_NAME) .
 
 run: ## Run container 
-	docker run -i -t --rm --env-file=./config.env -p=$(PORT):$(PORT) --name="$(APP_NAME)" $(APP_NAME)
-
+	docker run -it --rm --env-file=./config.env -v /src:/src -v  /logs:/logs -v /artifacts:/artifacts -v /statistics:/statistics --name="$(APP_NAME)" $(APP_NAME) /bin/bash
 
 stop: ## Sto and remove a running container
 	docker stop $(APP_NAME); docker rm $(APP_NAME)
-
-# Docker tagging
-tag: tag-latest tag-version 
-
-tag-latest: ## Generate container `{version}` tag
-	@echo 'create tag latest'
-	docker tag $(APP_NAME) $(DOCKER_REPO)/$(APP_NAME):latest
-
-tag-version: ## Generate container `latest` tag
-	@echo 'create tag $(VERSION)'
-	docker tag $(APP_NAME) $(DOCKER_REPO)/$(APP_NAME):$(VERSION)
 
