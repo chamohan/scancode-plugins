@@ -1,12 +1,13 @@
 FROM python:3.6
 
-RUN pip install scancode
+RUN pip install scancode-toolkit; mkdir /amd-scancode; mkdir /plugins
 
-ADD ./amd-scancode /
-ADD ./plugins /
+ADD ./Containers/Docker/amd-scancode /amd-scancode
+ADD ./Containers/Docker/plugins /plugins
 
-WORKDIR /plugins
+WORKDIR /amd-scancode
 
 # RUN Loop through all whl files in the directory and run pip install
+RUN for files in /plugins/*.whl; do pip install ${files}; done 
 
 CMD ["/bin/bash", "/amd-scancode/scansourcecode.sh"]

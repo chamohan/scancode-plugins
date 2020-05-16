@@ -15,9 +15,9 @@ export $(shell sed 's/=.*//' $(dpl))
 .PHONY: clean 
 
 clean: ## This help.
-	rm -R Containers/Docker/plugins/
-	rm -R Containers/Docker/amd-scancode/scancode-*/build/*
-	rm -R Containers/Docker/amd-scancode/scancode-*/dist/*
+	rm -f Containers/Docker/plugins/*
+	rm -f Containers/Docker/amd-scancode/scancode-*/build/*
+	rm -f Containers/Docker/amd-scancode/scancode-*/dist/*
 
 .DEFAULT_GOAL := help
 
@@ -26,8 +26,9 @@ help:
 
 
 build: ## Build the container
+	pip install wheel
 	./createwheeler.sh
-	cd Containers/Docker/;docker build -t $(APP_NAME) .
+	docker build -t $(APP_NAME) -f Containers/Docker/Dockerfile . 
 
 build-nc: ## Build the container without caching
 	./createwheeler.sh
