@@ -3,3 +3,5 @@ scancode  -clpeui  --package --processes `expr $(nproc --all) - 1` --classify --
 # running analysis
 
 exec python /amd-scancode/scancodestatus.py >/statistics/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
+echo $?
+
