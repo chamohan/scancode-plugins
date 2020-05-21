@@ -21,65 +21,75 @@ approvedLicenses = 0
 prohibitedLicenses = 0
 totalIssues = 0
 
-with open(filename) as f:
-    data = json.load(f)
-    modifications_counter = 0
-    for i in data['files']:
-        # Checking keywords in file
-        if i['keywordsline']:
-            print("File Name %s" %(i['path']))
-            print("Number of keywords %d" %(i['keywordsline']))
-            for m in i['matchedlines']:
-                print(m)
-            keywordsCounter = keywordsCounter + 1
+try:
 
-        # Checking Licenses in file
+    with open(filename) as f:
+        data = json.load(f)
+        modifications_counter = 0
+        for i in data['files']:
+            # Checking keywords in file
+            if i['keywordsline']:
+                print("File Name %s" %(i['path']))
+                print("Number of keywords %d" %(i['keywordsline']))
+                for m in i['matchedlines']:
+                    print(m)
+                    keywordsCounter = keywordsCounter + 1
 
-        if not i['no_licenses']:
-            files_with_license = files_with_license + 1
-        else:
-            files_without_license = files_without_license + 1
-            print("File Name %s is under %s License" %(i['path'],i['no_licenses']))
+            # Checking Licenses in file
 
-
-        # Checking Not Approved Licences and Approved License
-
-        if not i['license_policy']:
-            licensePolicy = licensePolicy + 1
-        else:
-            if i['license_policy']['label'] == 'Approved License':
-                approvedLicenses = approvedLicenses + 1
-                print("The file %s has %s" %(i['path'],i['license_policy']['label']))
-            elif i['license_policy']['label'] == 'Prohibited Licenses':
-                prohibitedLicenses = prohibitedLicenses + 1
-                print("The file %s has %s" %(i['path'],i['license_policy']['label']))
-
-        # Checking license Modifications in files
+            if not i['no_licenses']:
+                files_with_license = files_with_license + 1
+            else:
+                files_without_license = files_without_license + 1
+                print("File Name %s is under %s License" %(i['path'],i['no_licenses']))
 
 
-        if i['licenses'] is None:
-            no_license = no_license + 1
-        else:
-            for j in i['licenses']:
-                try:
-                    if j['score'] != 100.0:
-                        modifications_counter = modifications_counter + 1
-                except Exception:
-                    pass
+            # Checking Not Approved Licences and Approved License
+
+            if not i['license_policy']:
+               licensePolicy = licensePolicy + 1
+            else:
+                if i['license_policy']['label'] == 'Approved License':
+                    approvedLicenses = approvedLicenses + 1
+                    print("The file %s has %s" %(i['path'],i['license_policy']['label']))
+                elif i['license_policy']['label'] == 'Prohibited Licenses':
+                    prohibitedLicenses = prohibitedLicenses + 1
+                    print("The file %s has %s" %(i['path'],i['license_policy']['label']))
+
+            # Checking license Modifications in files
 
 
-if modifications_counter > 0:
-    totalIssues = modifications_counter + keywordsCounter + prohibitedLicenses
-    print("-----Summary Report------")
-    print("The total number of files containing no linceses are %d" %(no_license))
-    print("Number of linceses Modifications %d" %(modifications_counter))
-    print("The number of times keywords were present in files %s" %(keywordsCounter))
-    print("The number of Prohibited Licenses are %s" %(prohibitedLicenses))
-    print("The number of Approved Linceses are %s" %(approvedLicenses))
-    print("The Total number of issues are %s" %(totalIssues))
-    print("Failed")
-    sys.exit(totalIssues)
-else:
-    print("The number of Approved Linceses are %s" %(approvedLicenses))
-    print("Tests Passed")
-    sys.exit(approvedLicenses)
+            if i['licenses'] is None:
+                no_license = no_license + 1
+            else:
+                for j in i['licenses']:
+                    try:
+                        if j['score'] != 100.0:
+                            modifications_counter = modifications_counter + 1
+                    except Exception:
+                        pass
+
+
+    if modifications_counter > 0:
+        totalIssues = modifications_counter + keywordsCounter + prohibitedLicenses
+        print("-----Summary Report------")
+        print("The total number of files containing no linceses are %d" %(no_license))
+        print("Number of linceses Modifications %d" %(modifications_counter))
+        print("The number of times keywords were present in files %s" %(keywordsCounter))
+        print("The number of Prohibited Licenses are %s" %(prohibitedLicenses))
+        print("The number of Approved Linceses are %s" %(approvedLicenses))
+        print("The Total number of issues are %s" %(totalIssues))
+        print("Failed")
+        sys.exit(totalIssues)
+    else:
+        print("The number of Approved Linceses are %s" %(approvedLicenses))
+        print("Tests Passed")
+        sys.exit(approvedLicenses)
+
+except OSError as err:
+    print("OS error: {0}".format(err))
+except ValueError:
+    print("Could not convert data ")
+except:
+    print("Unexpected error:", sys.exc_info()[0])
+    raise
