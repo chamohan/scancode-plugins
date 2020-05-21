@@ -1,6 +1,6 @@
 FROM python:3.6
 
-RUN pip install scancode-toolkit; mkdir /amd-scancode; mkdir /plugins
+RUN pip install scancode-toolkit
 
 ADD ./Containers/Docker/amd-scancode /amd-scancode
 ADD ./Containers/Docker/plugins /plugins
