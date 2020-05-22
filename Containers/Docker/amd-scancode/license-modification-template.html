@@ -58,6 +58,7 @@
           <th>is_source</th>
           <th>is_script</th>
           <th>Is License present</th>
+          <th>license Policy</th>
           <th>license_modification</th>
           <th>keywords Present</th>
           <th>Matched Lines</th>
@@ -84,6 +85,11 @@
               <td>{{ row.no_licenses }}</td>
               {% else %}
               <td style="color:red;">{{ 'No License Present'}}</td>
+              {% endif %}
+              {% if row.license_policy %}}</td>
+              <td style="color:red;">{{ row.license_policy.label }}</td>
+              {% else %}
+              <td>{{ 'ok' }}</td>
               {% endif %}
               <td style="color:red;">{{ row.licence_modifications.modinfo }}</td>
               <td style="color:red;">{{ row.keywordsline }}</td>
