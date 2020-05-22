@@ -1,27 +1,31 @@
 license_policies:
 -   license_key:  alexander-Pslyak
     label: Approved License
--   license_key: apache-1.1 
+-   license_key: apache-1.0
+    label: Approved License
+-   license_key: apache-1.1
     label: Approved License
 -   license_key: apache-2.0
     label: Approved License
--   license_key: gpl-2.0-plus
-    label: Approved License
 -   license_key: aml
+    label: Approved License
+-   license_key: gpl-2.0-plus
     label: Approved License
 -   license_key: mit
     label: Approved License
--   license_key: attribution 
+-   license_key: attribution
     label: Approved License
 -   license_key: beOpen
     label: Approved License
--   license_key: luxi 
+-   license_key: bigelow-holmes
     label: Approved License
--   license_key: boost-1.0 
+-   license_key: luxi
     label: Approved License
--   license_key: bsd-simplified 
+-   license_key: boost-1.0
     label: Approved License
--   license_key: bsd-1-clause 
+-   license_key: bsd-simplified
+    label: Approved License
+-   license_key: bsd-1-clause
     label: Approved License
 -   license_key: freebsd-boot
     label: Approved License
@@ -37,15 +41,33 @@ license_policies:
     label: Approved License
 -   license_key: gpl-2.0
     label: Approved License
--   license_key: agpl-3.0 
+-   license_key: bzip2-libbzip-2010
+    label: Approved License
+-   license_key: agpl-3.0
     label: Prohibited Licenses
--   license_key: aladdin-free-public-license 
+-   license_key: afpl-8.0
     label: Prohibited Licenses
--   license_key: broadcom-cfe 
+-   license_key: afpl-9.0
+    label: Prohibited Licenses
+-   license_key: aladdin-md5
+    label: Prohibited Licenses
+-   license_key: nosl-3.0
+    label: Prohibited Licenses
+-   license_key: mongodb-sspl-1.0
+    label: Prohibited Licenses
+-   license_key: cc-by-nc-1.0
+    label: Prohibited Licenses
+-   license_key: cc-by-nc-2.0
+    label: Prohibited Licenses
+-   license_key: cc-by-nc-3.0
+    label: Prohibited Licenses
+-   license_key: cc-by-nc-4.0
+    label: Prohibited Licenses
+-   license_key: broadcom-cfe
+    label: Prohibited Licenses
+-   license_key: CC-BY-SA-4.0
     label: Prohibited Licenses
 -   license_key: attribution-nonCommercial-sharealike
     label: Prohibited Licenses
--   license_key: NPOSL-3.0 
-    label: Prohibited Licenses
--   license_key: ubm-llc-terms-of-service 
+-   license_key: ubm-llc-terms-of-service
     label: Prohibited Licenses
