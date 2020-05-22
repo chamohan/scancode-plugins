@@ -30,7 +30,7 @@ help:
         echo " make build"
 
 build: ## Build the container
-        sudo pip install wheel
+        pip install wheel
         ./createwheeler.sh
         docker build -t $(APP_NAME) -f Containers/Docker/Dockerfile .
 
