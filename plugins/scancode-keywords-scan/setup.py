@@ -5,21 +5,21 @@ from __future__ import print_function
 
 from glob import glob
 from os.path import basename
-from os.path import join
+#from os.path import join
 from os.path import splitext
 
 from setuptools import find_packages
 from setuptools import setup
 
 
-desc = '''A ScanCode scan plugin to scan the identify the  keywords from source codelines '''
+DESC = '''A ScanCode scan plugin to identify the  keywords from source codelines '''
 
 setup(
     name='scancode-keywords-scan',
     version='1.0.0',
     license='Apache-2.0 with ScanCode acknowledgment',
-    description=desc,
-    long_description=desc,
+    description=DESC,
+    long_description=DESC,
     author='Chander',
     author_email='chamohan@amd.com',
     url='https://gitlab.rocm.amd.com/swca/amd-scancode-plugins',
@@ -52,4 +52,3 @@ setup(
         ],
     }
 )
-
