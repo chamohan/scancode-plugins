@@ -1,22 +1,18 @@
 from __future__ import unicode_literals
 from __future__ import absolute_import, print_function
 
-import typecode
 import re
-import attr
-from commoncode.filetype import counter
-from commoncode.functional import memoize
-from commoncode import filetype
-from commoncode import fileutils
-from collections import OrderedDict
-from functools import partial
-from itertools import chain
 
+from collections import OrderedDict
+from commoncode.filetype import counter
+from commoncode import filetype
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
 from scancode import SCAN_GROUP
-from typecode import contenttype
+
+import attr
+
 
 @scan_impl
 class   KeywordsLinesScanner(ScanPlugin):
@@ -60,20 +56,15 @@ def get_keywordsscan(location, **kwargs):
 
 def file_lines_count(location):
     """
-    Return a tuple of (code, keywords, matching_keywords, line_numbers) line counts in a source text file at
-    `location`. 
+    Return a tuple of (code, keywords, matching_keywords, line_numbers) line
+    counts in a source text file at `location`.
     """
 
     code = 0
     keywords = 0
-    matching_keywords = []
     line_numbers = []
     line_no = 0
     matched_lines = []
-
-    T = typecode.contenttype.get_type(location)
-    if not T.is_source:
-        return code, keywords, matched_lines
 
     search_list = ['Gibraltar', 'Phantom']
 
@@ -82,16 +73,16 @@ def file_lines_count(location):
         for line in lines:
             line = line.decode('utf-8')
             line_no += 1
-            if re.compile('|'.join(search_list),re.IGNORECASE).search(line): 
+            if re.findall(r"(?=("+'|'.join(search_list)+r"))", line):
                 keywords += 1
-                #line_no += 1
-                line_numbers.append(line_no)  
+                line_numbers.append(line_no)
                 matched_test = "line no %d has keyword/keywords - %s" %(line_no, line)
                 matched_lines.append(matched_test)
             else:
                 code += 1
 
     return code, keywords, matched_lines
+
 
 def code_lines_count(location):
     code, _keywords, matched_lines = file_lines_count(location)
@@ -104,7 +95,7 @@ def keywords_lines_count(location):
 
 def matched_lines(location):
     code, _keywords, matched_lines = file_lines_count(location)
-    return matched_lines 
+    return matched_lines
 
 
 filetype.counting_functions.update({
@@ -133,4 +124,3 @@ def get_keywords_lines_count(location):
 def get_matched_lines(location):
 
     return counter(location, 'matched_lines')
-
