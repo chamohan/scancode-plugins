@@ -15,28 +15,28 @@ export $(shell sed 's/=.*//' $(dpl))
 .PHONY: clean
 
 clean: ## This help.
-        rm -f Containers/Docker/plugins/*
-        rm -f Containers/Docker/amd-scancode/scancode-*/build/*
-        rm -f Containers/Docker/amd-scancode/scancode-*/dist/*
-        rm -fr plugins/scancode-*/build/*
-        rm -fr plugins/scancode-*/dist/*
+	rm -f Containers/Docker/plugins/*
+	rm -f Containers/Docker/amd-scancode/scancode-*/build/*
+	rm -f Containers/Docker/amd-scancode/scancode-*/dist/*
+	rm -fr plugins/scancode-*/build/*
+	rm -fr plugins/scancode-*/dist/*
 
 
 .DEFAULT_GOAL := help
 
 help:
-        echo "Run as make build or make clean or make build-nc or make stop"
-        echo " make clean"
-        echo " make build"
+	echo "Run as make build or make clean or make build-nc or make stop"
+	echo " make clean"
+	echo " make build"
 
 build: ## Build the container
-        pip install wheel
-        ./createwheeler.sh
-        docker build -t $(APP_NAME) -f Containers/Docker/Dockerfile .
+	pip install wheel
+	./createwheeler.sh
+	docker build -t $(APP_NAME) -f Containers/Docker/Dockerfile .
 
 build-nc: ## Build the container without caching
-        ./createwheeler.sh
-        docker build --no-cache -t $(APP_NAME) -f Containers/Docker/Dockerfile .
+	./createwheeler.sh
+	docker build --no-cache -t $(APP_NAME) -f Containers/Docker/Dockerfile .
 
 stop: ## Sto and remove a running container
-        docker stop $(APP_NAME); docker rm $(APP_NAME)
+	docker stop $(APP_NAME); docker rm $(APP_NAME)
