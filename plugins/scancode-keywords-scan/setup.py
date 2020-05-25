@@ -5,7 +5,6 @@ from __future__ import print_function
 
 from glob import glob
 from os.path import basename
-#from os.path import join
 from os.path import splitext
 
 from setuptools import find_packages
