@@ -1,5 +1,5 @@
 license_policies:
--   license_key:  alexander-Pslyak
+-   license_key: alexander-Pslyak
     label: Approved License
 -   license_key: apache-1.0
     label: Approved License
@@ -42,6 +42,186 @@ license_policies:
 -   license_key: gpl-2.0
     label: Approved License
 -   license_key: bzip2-libbzip-2010
+    label: Approved License
+-   license_key: bzip2-1.0.5
+    label: Approved License
+-   license_key: carnegie-mellon
+    label: Approved License
+-   license_key: cpl-1.0
+    label: Approved License
+-   license_key: cpl-0.5
+    label: Approved License
+-   license_key: cnri-python-1.6
+    label: Approved License
+-   license_key: cc0-1.0
+    label: Approved License
+-   license_key: cc-by-4.0
+    label: Approved License
+-   license_key: cc-pd
+    label: Approved License
+-   license_key: python-cwi
+    label: Approved License
+-   license_key: dwtfnmfpl-3.0
+    label: Approved License
+-   license_key: wtfnmfpl-1.0
+    label: Approved License
+-   license_key: wtfpl-1.0
+    label: Approved License
+-   license_key: epl-1.0
+    label: Approved License
+-   license_key: efl-2.0
+    label: Approved License
+-   license_key: ecos-exception-2.0
+    label: Approved License
+-   license_key: entessa-1.0
+    label: Approved License
+-   license_key: eu-datagrid
+    label: Approved License
+-   license_key: fair
+    label: Approved License
+-   license_key: freetype
+    label: Approved License
+-   license_key: ecl-2.0
+    label: Approved License
+-   license_key: fsf-ap
+    label: Approved License
+-   license_key: fsf-unlimited
+    label: Approved License
+-   license_key: bison-exception-2.0
+    label: Approved License
+-   license_key: glut
+    label: Approved License
+-   license_key: lgpl-2.0
+    label: Approved License
+-   license_key: lgpl-2.1
+    label: Approved License
+-   license_key: historical
+    label: Approved License
+-   license_key: imagemagick
+    label: Approved License
+-   license_key: IJG
+    label: Approved License
+-   license_key: info-zip
+    label: Approved License
+-   license_key: intel-osl-1989
+    label: Approved License
+-   license_key: itu
+    label: Approved License
+-   license_key: itu-t
+    label: Approved License
+-   license_key: isc
+    label: Approved License
+-   license_key: lbnl-bsd
+    label: Approved License
+-   license_key: libpng
+    label: Approved License
+-   license_key: ijg
+    label: Approved License
+-   license_key: x11-tiff
+    label: Approved License
+-   license_key: llvm-exception
+    label: Approved License
+-   license_key: enna
+    label: Approved License
+-   license_key: adobe-glyph
+    label: Approved License
+-   license_key: khronos
+    label: Approved License
+-   license_key: mit-old-style
+    label: Approved License
+-   license_key: mit-modern
+    label: Approved License
+-   license_key: naumen
+    label: Approved License
+-   license_key: nist-pd
+    label: Approved License
+-   license_key: nunit-v2
+    label: Approved License
+-   license_key: nvidia
+    label: Approved License
+-   license_key: openldap-1.1
+    label: Approved License
+-   license_key: openldap-1.2
+    label: Approved License
+-   license_key: openldap-1.3
+    label: Approved License
+-   license_key: openldap-1.4
+    label: Approved License
+-   license_key: openldap-2.0
+    label: Approved License
+-   license_key: openldap-2.1
+    label: Approved License
+-   license_key: openldap-2.2.1
+    label: Approved License
+-   license_key: openldap-2.2
+    label: Approved License
+-   license_key: openldap-2.3
+    label: Approved License
+-   license_key: openldap-2.4
+    label: Approved License
+-   license_key: openldap-2.5
+    label: Approved License
+-   license_key: openldap-2.6
+    label: Approved License
+-   license_key: openldap-2.7
+    label: Approved License
+-   license_key: openldap-2.8
+    label: Approved License
+-   license_key: openssl
+    label: Approved License
+-   license_key: ssleay
+    label: Approved License
+-   license_key: php-2.0.1
+    label: Approved License
+-   license_key: php-2.0.2
+    label: Approved License
+-   license_key: php-2.0.3
+    label: Approved License
+-   license_key: php-3.0
+    label: Approved License
+-   license_key: 3.0.1
+    label: Approved License
+-   license_key: postgresql
+    label: Approved License
+-   license_key: psf
+    label: Approved License
+-   license_key: psf-3.7.2
+    label: Approved License
+-   license_key: python
+    label: Approved License
+-   license_key: rsa-md5
+    label: Approved License
+-   license_key: sgi-freeb-2.0
+    label: Approved License
+-   license_key: sax-pd
+    label: Approved License
+-   license_key: ofl-1.1
+    label: Approved License
+-   license_key: standard-ml-nj
+    label: Approved License
+-   license_key: stlport-4.5
+    label: Approved License
+-   license_key: sunpro
+    label: Approved License
+-   license_key: tcl
+    label: Approved License
+-   license_key: beerware
+    label: Approved License
+-   license_key: curl
+    label: Approved License
+-   license_key: json
+    label: Approved License
+-   license_key: unlicense
+    label: Approved License
+-   license_key: wol
+    label: Approved License
+-   license_key: uoi-ncsa
+    label: Approved License
+-   license_key: xfree86-1.1
+    label: Approved License
+-   license_key: bsd-zero
+    label: Approved License
+-   license_key: zlib
     label: Approved License
 -   license_key: agpl-3.0
     label: Prohibited Licenses
