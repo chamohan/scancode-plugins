@@ -27,7 +27,7 @@ function runscan {
 
     # running analysis
 
-    ${PYTHON} ${STATUSSCRIPT} >>${STATISTICS}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
+    ${PYTHON} ${STATUSSCRIPT} >${STATISTICS}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
 }
 
 runscan

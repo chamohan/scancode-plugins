@@ -71,7 +71,7 @@ try:
 
 
     if modifications_counter > 0:
-        totalIssues = modifications_counter + keywordsCounter + prohibitedLicenses
+        totalIssues = ( modifications_counter + keywordsCounter + prohibitedLicenses + no_license )
         print("-----Summary Report------")
         print("The total number of files containing no linceses are %d" %(no_license))
         print("Number of linceses Modifications %d" %(modifications_counter))
