@@ -10,7 +10,7 @@ clean: ## This help.
 	rm -f Containers/Docker/amd-scancode/scancode-*/dist/*
 	rm -fr plugins/scancode-*/build/*
 	rm -fr plugins/scancode-*/dist/*
-	rm -fr plugins/scancode-licence-modifications/src/*.egg-info
+	rm -fr plugins/scancode-*/src/*.egg-info
 
 
 .DEFAULT_GOAL := help
@@ -29,4 +29,4 @@ build-nc: ## Build the container without caching
 	docker build --no-cache -t $(APP_NAME) -f Containers/Docker/Dockerfile .
 
 stop: ## Stop and remove a running image and container
-	docker stop $(APP_NAME); docker rmi -f  $(APP_NAME):latest
+	docker rmi -f  $(APP_NAME):latest

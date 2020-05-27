@@ -1,3 +1,0 @@
-[scancode_post_scan]
-onlylicensestitles = only_licenses_titles.only_licenses_titles:OnlyLicensesTitles
-
