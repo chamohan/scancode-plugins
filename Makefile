@@ -1,13 +1,3 @@
-# make
-# #   1. Go into each plugin directory, execute python3 setup.py bdist_wheel
-# # make docker
-# #   1. Copy all generated *.whl files into a folder named plugins in Containers/Docker/  directory
-# #   2. Go into Containers/Docker and execute docker build -t amd-scancode .
-# #   3. Delete Containers/Docker/plugins folder.
-#
-
-# import deploy config
-# You can change the default deploy config with `make cnf="deploy_special.env" release`
 dpl ?= deploy.env
 include $(dpl)
 export $(shell sed 's/=.*//' $(dpl))
@@ -20,6 +10,7 @@ clean: ## This help.
 	rm -f Containers/Docker/amd-scancode/scancode-*/dist/*
 	rm -fr plugins/scancode-*/build/*
 	rm -fr plugins/scancode-*/dist/*
+	rm -fr plugins/scancode-licence-modifications/src/*.egg-info
 
 
 .DEFAULT_GOAL := help
@@ -37,5 +28,5 @@ build-nc: ## Build the container without caching
 	./createwheeler.sh
 	docker build --no-cache -t $(APP_NAME) -f Containers/Docker/Dockerfile .
 
-stop: ## Sto and remove a running container
-	docker stop $(APP_NAME); docker rm $(APP_NAME)
+stop: ## Stop and remove a running image and container
+	docker stop $(APP_NAME); docker rmi -f  $(APP_NAME):latest

@@ -8,6 +8,6 @@ ADD ./Containers/Docker/plugins /plugins
 WORKDIR /amd-scancode
 
 # RUN Loop through all whl files in the directory and run pip install
-RUN for files in /plugins/*.whl; do pip install ${files}; done
+RUN for files in /plugins/*.whl; do pip install ${files}; done; pip install pyicu
 
 ENTRYPOINT ["/bin/bash", "/amd-scancode/scansourcecode.sh"]
