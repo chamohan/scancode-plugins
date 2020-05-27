@@ -8,6 +8,17 @@ export PIP=`which pip`
 export BASH=`which bash`
 
 
+trap cleanup 3 6 15
+
+function cleanup {
+
+  echo "Caught Signal ... cleaning up." >>${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-cleanup
+  echo "Done cleanup ... quitting. process id $$ " >>${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-create-wheelercleanup
+  exit 1
+}
+
+
+
 function buildPlugins {
 
     ${MKDIR} -p ${PWD}/Containers/Docker/plugins

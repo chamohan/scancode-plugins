@@ -13,8 +13,8 @@ export STATISTICS="/statistics"
 
 trap cleanup 3 6 15
 
-cleanup()
-{
+function cleanup {
+
   echo "Caught Signal ... cleaning up." >>${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-cleanup
   echo "Done cleanup ... quitting. process id $$ " >>${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-cleanup
   exit 1
@@ -22,7 +22,6 @@ cleanup()
 
 
 function runscan {
-
 
     ${SCANCODE}  -clpeui  --package --processes `expr $(nproc --all) - 1` --classify --keywordsscan --verbose --full-root --json-pp ${ARTIFACTS}/$(date "+%Y.%m.%d-%H.%M.%S")-licenses.json ${SOURCECODE} --license-policy ${LICENSEPOLICY} --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses  --licence-modifications --custom-output ${ARTIFACTS}/$(date "+%Y.%m.%d-%H.%M.%S")-license-modification-report.html --custom-template ${LICENSETEMPLATE} >>${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
 
