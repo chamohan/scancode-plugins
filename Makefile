@@ -5,13 +5,7 @@ export $(shell sed 's/=.*//' $(dpl))
 .PHONY: clean
 
 clean: ## This help.
-	rm -f Containers/Docker/plugins/*
-	rm -f Containers/Docker/amd-scancode/scancode-*/build/*
-	rm -f Containers/Docker/amd-scancode/scancode-*/dist/*
-	rm -fr plugins/scancode-*/build/*
-	rm -fr plugins/scancode-*/dist/*
-	rm -fr plugins/scancode-*/src/*.egg-info
-
+	find ./ -name *.egg-info -o -name *.pyc -o -name *.whl -o -name bdist.linux-* -o -name 'lib'|xargs rm -fr
 
 .DEFAULT_GOAL := help
 
