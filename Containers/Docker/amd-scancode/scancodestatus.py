@@ -10,7 +10,6 @@ path = '/artifacts'
 os.chdir(path)
 files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
 no_license = 0
-oldest = files[0]
 #latest  json file name
 filename = files[-2]
 keywordsCounter = 0
