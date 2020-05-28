@@ -71,8 +71,11 @@ def file_lines_count(location):
     try:
         with open('/amd-scancode/keywordsdata.yml') as data:
             searchList = yaml.safe_load(data) 
-            if len(searchList) == 0:
-                sys.exit("The file is either not yaml formatted or contain no data") 
+
+
+        if len(searchList) == 0:
+            sys.exit("The file is either not yaml formatted or contain no data") 
+
     except IOError:
         sys.exit("File not accessible")
 
