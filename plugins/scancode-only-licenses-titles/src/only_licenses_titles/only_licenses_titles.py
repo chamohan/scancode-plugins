@@ -15,7 +15,7 @@ from scancode import POST_SCAN_GROUP
 class OnlyLicensesTitles(PostScanPlugin):
 
     """
-	Add the "only_licenses_titles" attribute to a resource if it does not contain any license 
+	Add the "only_licenses_titles" attribute to a resource if it does not contain any license
     """
 
     resource_attributes = dict(only_licenses_titles=attr.ib(default=attr.Factory(dict)))
@@ -46,7 +46,7 @@ class OnlyLicensesTitles(PostScanPlugin):
 
             try:
                 resource_start_line = set([entry.get('start_line') for entry in resource.licenses])
-                resource_end_line   = set([entry.get('end_line') for entry in resource.licenses])
+                resource_end_line = set([entry.get('end_line') for entry in resource.licenses])
 
 
             except AttributeError:

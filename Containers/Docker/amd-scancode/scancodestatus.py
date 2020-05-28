@@ -89,6 +89,3 @@ try:
 except OSError as err:
     print("OS error: {0}".format(err))
     sys.exit(totalIssues)
-except ValueError:
-    print("Could not convert data ")
-    sys.exit(totalIssues)

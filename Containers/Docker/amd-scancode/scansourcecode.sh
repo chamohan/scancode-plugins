@@ -3,13 +3,13 @@
 
 export SCANCODE=`which scancode`
 export PYTHON=`which python`
-export SOURCECODE="/src"
-export LOGS="/logs"
-export ARTIFACTS="/artifacts"
-export LICENSEPOLICY="/amd-scancode/amd_licence_policy.yml"
-export LICENSETEMPLATE="/amd-scancode/license-modification-template.html"
-export STATUSSCRIPT="/amd-scancode/scancodestatus.py"
-export STATISTICS="/statistics"
+export SOURCECODE='/src'
+export LOGS='/logs'
+export ARTIFACTS='/artifacts'
+export LICENSEPOLICY='/amd-scancode/amd_licence_policy.yml'
+export LICENSETEMPLATE='/amd-scancode/license-modification-template.html'
+export STATUSSCRIPT='/amd-scancode/scancodestatus.py'
+export STATISTICS='/statistics'
 
 trap cleanup 3 6 15
 
