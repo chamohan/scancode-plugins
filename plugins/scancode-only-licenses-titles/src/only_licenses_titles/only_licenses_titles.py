@@ -8,7 +8,6 @@ from __future__ import unicode_literals
 import attr
 
 from plugincode.post_scan import PostScanPlugin
-#from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
 
