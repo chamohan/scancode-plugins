@@ -24,9 +24,9 @@ class NoLicenses(PostScanPlugin):
 
     options = [
         CommandLineOption(('--no-licenses',),
-                                        is_flag=True, default=False,
-                                        help='Generate a list of no licences files',
-                                        help_group=POST_SCAN_GROUP)
+            is_flag=True, default=False,
+            help='Generate a list of no licences files',
+            help_group=POST_SCAN_GROUP),
     ]
 
     def is_enabled(self, no_licenses, **kwargs):

@@ -25,9 +25,9 @@ class LicenceModifications(PostScanPlugin):
 
     options = [
         CommandLineOption(('--licence-modifications',),
-                                        is_flag=True, default=False,
-                                        help='Generate a list of files in case of modified license',
-                                        help_group=POST_SCAN_GROUP)
+            is_flag=True, default=False,
+            help='Generate a list of files in case of modified license',
+            help_group=POST_SCAN_GROUP),
     ]
 
     def is_enabled(self, licence_modifications, **kwargs):

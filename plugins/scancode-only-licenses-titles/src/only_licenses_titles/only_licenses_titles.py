@@ -24,9 +24,9 @@ class OnlyLicensesTitles(PostScanPlugin):
 
     options = [
         CommandLineOption(('--only-licenses-titles',),
-                                        is_flag=True, default=False,
-                                        help='Generate a list of files with only license titles',
-                                        help_group=POST_SCAN_GROUP)
+            is_flag=True, default=False,
+            help='Generate a list of files with only license titles',
+            help_group=POST_SCAN_GROUP)
     ]
 
     def is_enabled(self, only_licenses_titles, **kwargs):
@@ -54,5 +54,6 @@ class OnlyLicensesTitles(PostScanPlugin):
                 continue
 
             for singlelinetitles in resource_start_line:
-                resource.only_licenses_titles = {"LineStart": resource_start_line, "LineEnd": resource_end_line}
+                resource.only_licenses_titles = {"LineStart": resource_start_line,
+						    "LineEnd": resource_end_line}
                 codebase.save_resource(resource)
