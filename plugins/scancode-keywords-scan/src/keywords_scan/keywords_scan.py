@@ -99,7 +99,7 @@ def file_lines_count(location):
                 if re.findall(r"(?=("+'|'.join(searchList)+r"))", line):
                     keywords += 1
                     line_numbers.append(line_no)
-                    matched_test = "line no %d has keyword/keywords - %s" %(line_no, line)
+                    matched_test = "line no %d has - %s keywords" %(line_no, line)
                     matched_lines.append(matched_test)
                 else:
                     code += 1

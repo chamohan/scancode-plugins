@@ -31,7 +31,7 @@ class ScanCodeStatus:
             files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
             no_license = 0
             # latest  json report file name created with time stamp
-            filename = files[-2]
+            filename = files[-1]
         except OSError as err:
             logger.debug("OS error: {0}".format(err))
             logger.debug("Not able to find/list/sort the files")
@@ -106,6 +106,6 @@ class ScanCodeStatus:
 
 startcheck = ScanCodeStatus()
 
-exitcode = startcheck.scanLogResults('/artifacts')
+exitcode = startcheck.scanLogResults('/statistics')
 
 sys.exit(exitcode)
