@@ -11,6 +11,14 @@ from plugincode.post_scan import PostScanPlugin
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
 
+import logging
+import sys
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(stream=sys.stdout)
+logger.setLevel(logging.DEBUG)
+
+
 class NoLicenses(PostScanPlugin):
 
     """
@@ -49,6 +57,7 @@ class NoLicenses(PostScanPlugin):
 
             except AttributeError:
                 # add no_licenses regardless if there is license info or not
+                logger.dubug("add no_licenses regardless if there is license info or not")
                 resource.no_licenses = {}
                 codebase.save_resource(resource)
                 continue

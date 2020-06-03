@@ -14,6 +14,14 @@ from scancode import SCAN_GROUP
 import attr
 import yaml
 
+import logging
+import sys
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(stream=sys.stdout)
+logger.setLevel(logging.DEBUG)
+
+
 @scan_impl
 class   KeywordsLinesScanner(ScanPlugin):
     """
@@ -74,25 +82,31 @@ def file_lines_count(location):
 
 
         if len(searchList) == 0:
+            log_debug("The file is either not yaml formatted or contain no data") 
             sys.exit("The file is either not yaml formatted or contain no data")
 
     except IOError:
+        log_debug("File not accessible")
         sys.exit("File not accessible")
 
+    
+    try:
+        with open(location, 'rb') as lines:
 
-    with open(location, 'rb') as lines:
-
-        for line in lines:
-            line = line.decode('utf-8')
-            line_no += 1
-            if re.findall(r"(?=("+'|'.join(searchList)+r"))", line):
-                keywords += 1
-                line_numbers.append(line_no)
-                matched_test = "line no %d has keyword/keywords - %s" %(line_no, line)
-                matched_lines.append(matched_test)
-            else:
-                code += 1
-
+            for line in lines:
+                line = line.decode('utf-8')
+                line_no += 1
+                if re.findall(r"(?=("+'|'.join(searchList)+r"))", line):
+                    keywords += 1
+                    line_numbers.append(line_no)
+                    matched_test = "line no %d has keyword/keywords - %s" %(line_no, line)
+                    matched_lines.append(matched_test)
+                else:
+                    code += 1
+    except IOError:
+        log_debug("/amd-scancode/keywordsdata.yml File not accessible")
+        sys.exit("File not accessible")
+       
     return code, keywords, matched_lines
 
 
