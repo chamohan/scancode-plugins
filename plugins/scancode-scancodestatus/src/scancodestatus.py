@@ -47,7 +47,7 @@ class Scanstatus:
         except IndexError as err:
             logger.debug("No log files present") 
             totalIssues = totalIssues + 1
-            return totalIssues
+            sys.exit(totalIssues)
          
 
         try:
@@ -104,13 +104,13 @@ class Scanstatus:
                 logger.debug("The number of Approved Linceses are %s" % (approvedLicenses))
                 logger.debug("The Total number of issues are %s" % (totalIssues))
                 logger.debug("Failed")
-                return totalIssues
+                sys.exit(totalIssues)
             else:
                 logger.debug("The number of Approved Linceses are %s" % (approvedLicenses))
                 logger.debug("Tests Passed")
-                return approvedLicenses
+                sys.exit(approvedLicenses)
 
-        except RuntimeError as err:
+        except RuntimeError:
             logger.debug("RuntimeError: {0}".format(err))
-            return totalIssues
+            sys.exit(totalIssues)
 

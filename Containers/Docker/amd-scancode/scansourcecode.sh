@@ -9,7 +9,7 @@ export OUT='out'
 export ARTIFACTS='artifacts'
 export LICENSEPOLICY='/amd-scancode/amd_licence_policy.yml'
 export LICENSETEMPLATE='/amd-scancode/license-modification-template.html'
-export STATUSSCRIPT='/amd-scancode/scancodestatus.py'
+export STATUSSCRIPT='/amd-scancode/scancodestatuscheck.py'
 export STATISTICS='statistics'
 
 trap cleanup 3 6 15
@@ -22,13 +22,8 @@ function cleanup {
 }
 
 
-function runscan {
+${SCANCODE}  -clpeui  --package --processes `expr $(nproc --all) - 1` --classify --keywordsscan --verbose --full-root --json-pp /${STATISTICS}/$(date "+%Y.%m.%d-%H.%M.%S")-licenses.json /${SOURCECODE} --license-policy ${LICENSEPOLICY} --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses  --licence-modifications --custom-output /${ARTIFACTS}/$(date "+%Y.%m.%d-%H.%M.%S")-license-modification-report.html --custom-template ${LICENSETEMPLATE} >>/${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
 
-    ${SCANCODE}  -clpeui  --package --processes `expr $(nproc --all) - 1` --classify --keywordsscan --verbose --full-root --json-pp /${STATISTICS}/$(date "+%Y.%m.%d-%H.%M.%S")-licenses.json /${SOURCECODE} --license-policy ${LICENSEPOLICY} --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses  --licence-modifications --custom-output /${ARTIFACTS}/$(date "+%Y.%m.%d-%H.%M.%S")-license-modification-report.html --custom-template ${LICENSETEMPLATE} >>/${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
+# running analysis
 
-    # running analysis
-
-    ${PYTHON} ${STATUSSCRIPT} >>/${OUT}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
-}
-
-runscan
+${PYTHON} ${STATUSSCRIPT} /${STATISTICS}>>/${OUT}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
