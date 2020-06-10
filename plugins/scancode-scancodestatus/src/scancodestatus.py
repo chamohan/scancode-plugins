@@ -10,12 +10,14 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
-class ScanCodeStatus():
+class Scanstatus:
+     
 
-    def __init__(self, dirpath):
-        self.dirpath = dirpath
+    def __init__(self, directorypath):
 
-    def scanLogResults(self, dirpath):
+        self.directorypath = directorypath 
+
+    def scanLogResults(self):
         code = 0
         keywords = 0
         matching_keywords = []
@@ -32,7 +34,7 @@ class ScanCodeStatus():
          
 
         try:
-            os.chdir(self.dirpath)
+            os.chdir(self.directorypath)
             files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
             no_license = 0
             # latest  json report file name created with time stamp
