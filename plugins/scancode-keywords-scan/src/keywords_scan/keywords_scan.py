@@ -130,23 +130,3 @@ filetype.counting_functions.update({
     'matched_lines': matched_lines
 })
 
-
-def get_code_lines_count(location):
-    """
-    Return the cumulative number of lines of code in the whole directory tree
-    at `location`. Use 0 if `location` is not a source file.
-    """
-    return counter(location, 'code_lines')
-
-
-def get_keywords_lines_count(location):
-    """
-    Return the cumulative number of lines of keywordss in the whole directory
-    tree at `location`. Use 0 if `location` is not a source file.
-    """
-    return counter(location, 'keywords_lines')
-
-
-def get_matched_lines(location):
-
-    return counter(location, 'matched_lines')
