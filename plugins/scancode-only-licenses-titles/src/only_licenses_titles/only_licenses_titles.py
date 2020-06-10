@@ -27,9 +27,6 @@ class OnlyLicensesTitles(PostScanPlugin):
 
     resource_attributes = dict(only_licenses_titles=attr.ib(default=attr.Factory(dict)))
 
-    sort_order = 9
-
-
     options = [
         CommandLineOption(('--only-licenses-titles',),
             is_flag=True, default=False,

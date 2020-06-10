@@ -28,9 +28,6 @@ class LicenceModifications(PostScanPlugin):
 
     resource_attributes = dict(licence_modifications=attr.ib(default=attr.Factory(dict)))
 
-    sort_order = 9
-
-
     options = [
         CommandLineOption(('--licence-modifications',),
             is_flag=True, default=False,

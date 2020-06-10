@@ -27,9 +27,6 @@ class NoLicenses(PostScanPlugin):
 
     resource_attributes = dict(no_licenses=attr.ib(default=attr.Factory(dict)))
 
-    sort_order = 9
-
-
     options = [
         CommandLineOption(('--no-licenses',),
             is_flag=True, default=False,
