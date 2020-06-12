@@ -1,11 +1,6 @@
 # Copyright (c) 2019 AMD Inc. and others. All rights reserved.
 # for any issue please email to chamohan@amd.com
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import attr
 
 from plugincode.post_scan import PostScanPlugin
