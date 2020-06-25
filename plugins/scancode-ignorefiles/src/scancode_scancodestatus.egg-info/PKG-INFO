@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: scancode-scancodestatus
+Version: 1.0.0
+Summary: A lib to scan the json file and return the status
+Home-page: https://gitlab.rocm.amd.com/swca/amd-scancode-plugins
+Author: Chander
+Author-email: chamohan@amd.com
+License: Apache-2.0 with ScanCode acknowledgment
+Description: A lib to scan the json file and return the status
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Utilities

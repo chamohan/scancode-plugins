@@ -1,0 +1,10 @@
+MANIFEST.in
+setup.cfg
+setup.py
+src/__init__.py
+src/scancodestatus.py
+src/scancode_scancodestatus.egg-info/PKG-INFO
+src/scancode_scancodestatus.egg-info/SOURCES.txt
+src/scancode_scancodestatus.egg-info/dependency_links.txt
+src/scancode_scancodestatus.egg-info/not-zip-safe
+src/scancode_scancodestatus.egg-info/top_level.txt
