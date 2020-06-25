@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/PKG-INFO" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/SOURCES.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/dependency_links.txt" beforeDir="false" />
@@ -38,7 +37,6 @@
       <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/not-zip-safe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/top_level.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancodestatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ignorefiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/PKG-INFO" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/SOURCES.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/dependency_links.txt" beforeDir="false" />
