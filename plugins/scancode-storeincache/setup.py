@@ -1,8 +1,4 @@
 # -*- encoding: utf-8 -*-
-
-from __future__ import absolute_import
-from __future__ import print_function
-
 from glob import glob
 from os.path import basename
 from os.path import splitext
@@ -14,7 +10,7 @@ from setuptools import setup
 DESC = '''A lib to scan the json file and return the status'''
 
 setup(
-    name='scancode-scancodestatus',
+    name='scancode-storeincache',
     version='1.0.0',
     license='Apache-2.0 with ScanCode acknowledgment',
     description=DESC,
@@ -35,5 +31,16 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
-
+    keywords=[
+        'open source', 'scancode', 'storeincache'
+    ],
+    install_requires=[
+        'scancode-toolkit',
+        'attr',
+    ],
+    entry_points={
+        'scancode_scan': [
+            'storeincache = storeincache.storeincache:storeincache',
+        ]
+    }
 )

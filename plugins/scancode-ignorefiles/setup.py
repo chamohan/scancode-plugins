@@ -11,10 +11,10 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-DESC = '''A lib to scan the json file and return the status'''
+DESC = '''A lib to ignore files, list of files or a single file'''
 
 setup(
-    name='scancode-scancodestatus',
+    name='scancode-ignorefiles',
     version='1.0.0',
     license='Apache-2.0 with ScanCode acknowledgment',
     description=DESC,
@@ -35,5 +35,17 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
+    keywords=[
+        'open source', 'scancode', 'ignorefiles'
+    ],
+    install_requires=[
+        'scancode-toolkit',
+        'attr',
+    ],
+    entry_points={
+        'scancode_scan': [
+            'keywordsscan = ignorefiles.ignorefiles:IgnoreFiles',
+        ]
+    }
 
 )
