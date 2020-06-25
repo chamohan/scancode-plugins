@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/not-zip-safe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancodestatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/MANIFEST.in" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/MANIFEST.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/NOTICE" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/NOTICE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/not-zip-safe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancodestatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ignorefiles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/not-zip-safe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancodestatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/src/storeincache.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1doZG6tWdGk8qaJJsEuetJqKQQO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/plugins/scancode-exceptioncache" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-exceptioncache" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="" />
+      <created>1593093307160</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593093307160</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="406" y="142" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593098061154">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="406" y="142" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1593098061154" />
+  </component>
+</project>
