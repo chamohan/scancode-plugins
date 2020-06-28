@@ -66,6 +66,7 @@ def is_filepresentincache(location):
     Return True if the resource at location is a file in redis cache.
     """
     try:
+        # connect to redis server and check the files present
         t = file_present(location)
 
     return t 
@@ -80,3 +81,4 @@ def is_filepresentincache(location):
         totalIssues = totalIssues + 1
         sys.exit(totalIssues)
          
+

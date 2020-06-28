@@ -1,4 +1,8 @@
 # -*- encoding: utf-8 -*-
+
+from __future__ import absolute_import
+from __future__ import print_function
+
 from glob import glob
 from os.path import basename
 from os.path import splitext
@@ -7,7 +11,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-DESC = '''A lib to scan the store the files in Redis cahce'''
+DESC = '''A ScanCode scan plugin to identify the sha1 and md5 hash and store them in redis cache '''
 
 setup(
     name='scancode-scancache',
@@ -24,6 +28,8 @@ setup(
     include_package_data=True,
     zip_safe=False,
     classifiers=[
+        # complete classifier list:
+        # http://pypi.python.org/pypi?%3Aaction=list_classifiers
         'Development Status :: 1 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
@@ -40,7 +46,8 @@ setup(
     ],
     entry_points={
         'scancode_scan': [
-            'scancache = scancache.scancache:ScanCache',
+            'scancache = scan_cache.scan_cache:ScanCache',
+
         ],
     }
 )
