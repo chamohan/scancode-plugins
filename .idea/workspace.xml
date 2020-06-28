@@ -20,12 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/adremovelicenses/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/adremovelicenses/addremovelicenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ingorefiles/ignorefiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ingorefiles/ignorefiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-scancache/src/scancache/scancache.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancache/src/scancache/scancache.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
