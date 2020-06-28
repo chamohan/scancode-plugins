@@ -11,7 +11,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-DESC = '''A lib to ignore files, list of files or a single file'''
+DESC = '''A lib to ignore the files  list of files or a single file'''
 
 setup(
     name='scancode-ignorefiles',
