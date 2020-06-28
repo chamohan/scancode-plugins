@@ -10,20 +10,12 @@ logger.setLevel(logging.DEBUG)
 class AddRemoveLicenses:
      
 
-    def __init__(self, directorypath):
+    def __init__(self, licensefile, licensemetadatafile,):
 
-        self.directorypath = directorypath 
+        self.licensefile = licensefile 
+        self.licensemetadatafile = licensemetadatafile
 
     def scanLogResults(self):
-        code = 0
-        keywords = 0
-        matching_keywords = []
-        line_numbers = []
-        line_no = 0
-        matched_lines = []
-        keywordsCounter = 0
-        files_with_license = 0
-        files_without_license = 0
         licensePolicy = 0
         approvedLicenses = 0
         prohibitedLicenses = 0
@@ -31,7 +23,7 @@ class AddRemoveLicenses:
          
 
         try:
-            os.chdir(self.directorypath)
+            os.chdir(self.licensefile)
             files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
             no_license = 0
             # latest  json report file name created with time stamp
@@ -110,4 +102,6 @@ class AddRemoveLicenses:
         except RuntimeError:
             logger.debug("RuntimeError: {0}".format(err))
             sys.exit(totalIssues)
+
+   
 
