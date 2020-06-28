@@ -20,34 +20,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/SOURCES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/not-zip-safe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancode_scancodestatus.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/scancodestatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/MANIFEST.in" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/MANIFEST.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/NOTICE" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/NOTICE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/setup.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/src/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/SOURCES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/not-zip-safe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancode_scancodestatus.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-exceptioncache/src/scancodestatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ignorefiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/SOURCES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/not-zip-safe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancode_scancodestatus.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/scancodestatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-storeincache/src/storeincache.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/scancode-scancache/NOTICE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/scancode-scancache/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/scancode-scancache/src/scancache/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scancode-plugins-latest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scancode-plugins-latest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/adremovelicenses/addremovelicenses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/adremovelicenses/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ignorefiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ingorefiles/ignorefiles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/MANIFEST.in" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancache/MANIFEST.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/NOTICE" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ingorefiles/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancache/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancache/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/src/storeincache.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancache/src/scancache/scancache.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,6 +62,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/plugins/scancode-exceptioncache" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-scancache\src\scancache" />
+      <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-addremovelicenses\src\adremovelicenses" />
+      <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-ignorefiles\src\ingorefiles" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-exceptioncache" />
     </key>
@@ -90,6 +94,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="406" y="142" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593098061154">

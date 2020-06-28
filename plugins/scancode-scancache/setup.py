@@ -7,10 +7,10 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-DESC = '''A lib to scan the json file and return the status'''
+DESC = '''A lib to scan the store the files in Redis cahce'''
 
 setup(
-    name='scancode-storeincache',
+    name='scancode-scancache',
     version='1.0.0',
     license='Apache-2.0 with ScanCode acknowledgment',
     description=DESC,
@@ -32,7 +32,7 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'open source', 'scancode', 'storeincache'
+        'open source', 'scancode', 'scancache'
     ],
     install_requires=[
         'scancode-toolkit',
@@ -40,7 +40,7 @@ setup(
     ],
     entry_points={
         'scancode_scan': [
-            'storeincache = storeincache.storeincache:storeincache',
-        ]
+            'scancache = scancache.scancache:ScanCache',
+        ],
     }
 )
