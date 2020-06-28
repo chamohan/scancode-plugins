@@ -6,30 +6,72 @@ import sys
 logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
+from functools import partial
 
-class Scanstatus:
-     
 
-    def __init__(self, directorypath):
+from plugincode.pre_scan import PreScanPlugin
+from plugincode.pre_scan import pre_scan_impl
+from scancode import CommandLineOption
+from scancode import PRE_SCAN_GROUP
+from typecode.contenttype import get_type
 
-        self.directorypath = directorypath 
 
-    def scanLogResults(self):
-        code = 0
-        keywords = 0
-        matching_keywords = []
-        line_numbers = []
-        line_no = 0
-        matched_lines = []
-        keywordsCounter = 0
-        files_with_license = 0
-        files_without_license = 0
-        licensePolicy = 0
-        approvedLicenses = 0
-        prohibitedLicenses = 0
-        totalIssues = 0
-         
+@pre_scan_impl
+class IgnoreFiles(PreScanPlugin):
+    """
+    Ignore files stored in scancode cache.
+    """
 
+    options = [
+        CommandLineOption(('--ignore-files',),
+                          is_flag=True,
+                          help='Ignore files.',
+                          sort_order=10,
+                          help_group=PRE_SCAN_GROUP)
+    ]
+
+    def is_enabled(self, ignore_files, **kwargs):
+        return ignore_binaries
+
+    def process_codebase(self, codebase, ignore_files, **kwargs):
+        """
+        Remove files and Resources from the resource tree.
+        """
+        if not ignore_files:
+            return
+
+        resources_to_remove = []
+
+        # walk the codebase to collect resource of files to remove.
+        for resource in codebase.walk():
+            if not resource.is_file:
+                continue
+
+            if is_filepresentincache(resource.location):
+                resources_to_remove.append(resource)
+
+        # second, effectively remove the files
+        for resource in resources_to_remove:
+            resource.remove(codebase)
+
+
+def is_filepresentincache(location):
+    """
+    Return True if the resource at location is a file in redis cache.
+    """
+    t = get_type(location)
+    return (
+            t.is_binary
+            or t.is_archive
+            or t.is_media
+            or t.is_office_doc
+            or t.is_compressed
+            or t.is_filesystem
+            or t.is_winexe
+            or t.is_elf
+            or t.is_java_class
+            or t.is_datao
+    )
         try:
             os.chdir(self.directorypath)
             files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
@@ -110,4 +152,4 @@ class Scanstatus:
         except RuntimeError:
             logger.debug("RuntimeError: {0}".format(err))
             sys.exit(totalIssues)
-
+}

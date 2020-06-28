@@ -20,21 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/plugins/scancode-scancache/NOTICE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugins/scancode-scancache/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugins/scancode-scancache/src/scancache/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scancode-plugins-latest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scancode-plugins-latest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/adremovelicenses/addremovelicenses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/adremovelicenses/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ignorefiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ingorefiles/ignorefiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/MANIFEST.in" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancache/MANIFEST.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/NOTICE" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ingorefiles/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancache/setup.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancache/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-storeincache/src/storeincache.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancache/src/scancache/scancache.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/adremovelicenses/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/adremovelicenses/addremovelicenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ingorefiles/ignorefiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-ignorefiles/src/ingorefiles/ignorefiles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-scancache/src/scancache/scancache.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancache/src/scancache/scancache.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +54,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-addremovelicenses\src" />
+      <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-addremovelicenses" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-scancache\src\scancache" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-addremovelicenses\src\adremovelicenses" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-ignorefiles\src\ingorefiles" />
@@ -101,5 +94,20 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="406" y="142" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1593098061154" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1593335995085">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1593335995085" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plugins/scancode-only-licenses-titles/src/only_licenses_titles/only_licenses_titles.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

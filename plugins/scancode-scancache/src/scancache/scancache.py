@@ -7,8 +7,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
-class Scanstatus:
-     
+class ScanCache:
 
     def __init__(self, directorypath):
 
