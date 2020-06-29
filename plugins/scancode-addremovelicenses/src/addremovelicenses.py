@@ -4,7 +4,14 @@ import os
 import sys
 import yaml
 from shutil import copyfile
+import click
 
+@click.command()
+@click.option('--licencefile', default=1, help='Enter the path of License file')
+@click.option('--metadatafile', prompt='metadata file path', help = 'Enter the metadata file path')
+
+
+from shutil import copyfile
 logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
@@ -29,6 +36,7 @@ class AddRemoveLicenses:
         fileExtensions.append(licenseFileExtension)
         return fileExtensions
 
+
     def is_licencefile_notempty(self):
         # Check if file exist and it is not empty
         return os.path.exists(self.licensefile) and os.stat(self.licensefile).st_size != 0
@@ -37,9 +45,11 @@ class AddRemoveLicenses:
         # check if the file exist and it is a valid yaml
         return os.path.exists(self.licensemetadatafile) and yaml.safe_load(self.licensemetadatafile)
 
-    def copy_files_scancode(self):
+    def copy_files_scancode(self, licenseFileTargetLocation, MetadataFileTargetLocation ):
         # Copy the files to scancode license location
         # adding exception handling
+        licenseFileTargetlocation = '/src/scancode/python3-virtualenv/lib/python3.6/site-packages/licensedcode/data/licenses'
+        
         try:
             copyfile(self.licensefile, licenseFileTargetLocation)
         except IOError as e:
@@ -114,7 +124,5 @@ class AddRemoveLicenses:
                         elif i['license_policy']['label'] == 'Prohibited Licenses':
         except RuntimeError:
             logger.debug("RuntimeError: {0}".format(err))
-            sys.exit()
-
-   
+            sys.exit(1)
 

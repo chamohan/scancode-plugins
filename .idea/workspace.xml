@@ -49,15 +49,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/plugins/scancode-exceptioncache" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-exceptioncache" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-addremovelicenses\src" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-addremovelicenses" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-scancache\src\scancache" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-addremovelicenses\src\adremovelicenses" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-ignorefiles\src\ingorefiles" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-exceptioncache" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -90,10 +90,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="406" y="142" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1593098061154" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1593335995085">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1593410515268">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1593335995085" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1593410515268" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
