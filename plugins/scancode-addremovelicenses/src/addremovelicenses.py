@@ -8,11 +8,13 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
-class AddRemoveLicenses:
+class AddLicenses:
 
-    def __init__(self, licensefile, licensemetadatafile, license_file_targetlocation, metadata_file_targetlocation):
+    def __init__(self, licensefile, licensemetadatafile, \
+                 license_file_targetlocation, metadata_file_targetlocation, license_key):
 
         self.licensefile = licensefile
+        self.license_key = license_key
         self.licensemetadatafile = licensemetadatafile
         self.license_file_targetlocation = license_file_targetlocation
         self.metadata_file_targetlocation = metadata_file_targetlocation
@@ -81,3 +83,49 @@ class AddRemoveLicenses:
             logger.debug("Index error, %s" % err)
             logger.debug("Not able to find/list/sort the files")
             sys.exit("Run command Again")
+
+
+    def list_licences:
+        try:
+
+            os.chdir(self.directorypath)
+
+            files = os.path.isfile(self.license)
+        except OSError as err:
+            logger.debug("OS error: {0}".format(err))
+            logger.debug("Not able to find/list/sort the files")
+            sys.exit(1)
+        except IndexError as err:
+            logger.debug("No log files present")
+            sys.exit(1)
+
+    def remove_licenses(self):
+
+        try:
+
+            os.chdir(self.directorypath)
+            # checking and deleting .LICENSE FILE
+            if (os.path.isfile("self.license_key" + ".LICENSE")):
+                os.remove("self.license_key"+ ".LICENSE")
+            else:
+                logger.debug("License file does not exit")
+
+            if (os.path.isfile("self.license_key" + ""))
+            # latest  json report file name created with time stamp
+            filename = files[-1]
+        except OSError as err:
+            logger.debug("OS error: {0}".format(err))
+            logger.debug("Not able to find/list/sort the files")
+        except ValueError as err:
+            logger.debug("No JSON object could be decoded")
+        except IndexError as err:
+            logger.debug("No log files present")
+            totalIssues = totalIssues + 1
+            sys.exit(totalIssues)
+
+
+
+
+
+
+
