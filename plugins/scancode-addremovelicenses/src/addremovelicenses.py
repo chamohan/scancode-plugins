@@ -10,11 +10,12 @@ logger.setLevel(logging.DEBUG)
 
 class AddRemoveLicenses:
 
-    def __init__(self, licensefile, licensemetadatafile, licensepolicyfile):
+    def __init__(self, licensefile, licensemetadatafile, license_file_targetlocation, metadata_file_targetlocation ):
 
         self.licensefile = licensefile
         self.licensemetadatafile = licensemetadatafile
-        self.licensepolicyfile = licensepolicyfile
+        self.license_file_targetlocation = license_file_targetlocation
+        self.metadata_file_targetlocation = metadata_file_targetlocation
 
     def extract_file_extension(self):
         license_file_path = ""
@@ -43,12 +44,11 @@ class AddRemoveLicenses:
             os.stat(self.licensepolicyfile).st_size != 0
 
 
-    def copy_files_scancode(self, license_file_targetlocation, metadata_file_targetlocation):
+    def copy_files_scancode(self):
         # Copy the files to scancode license location
         # adding exception handling
-        license_file_targetlocation = '/src/scancode/python3-virtualenv/lib/python3.6/site-packages/licensedcode/data/licenses'
         try:
-            copyfile(self.licensefile, license_file_targetlocation)
+            copyfile(self.licensefile, self.license_file_targetlocation)
         except IOError as err:
             print("Unable to copy file. %s" % err)
             sys.exit(1)
@@ -56,7 +56,7 @@ class AddRemoveLicenses:
             print("Unexpected error:", sys.exc_info())
             sys.exit(1)
         try:
-            copyfile(self.licensemetadatafile, metadata_file_targetlocation)
+            copyfile(self.licensemetadatafile, self.metadata_file_targetlocation)
         except IOError as err:
             print("Unable to copy file. %s" % err)
             sys.exit(1)
@@ -84,7 +84,7 @@ class AddRemoveLicenses:
             if checklicense and checkmetadata:
                 is_correct_extension = self.extract_file_extension()
                 if is_correct_extension[0] == '.LICENSE' and is_correct_extension[1] == '.yml':
-                    copy_files_scancode(self)
+                    copyfiles = self.copy_files_scancode()
             else:
                 logger.debug("Files were not present")
 
@@ -94,11 +94,7 @@ class AddRemoveLicenses:
             logger.debug("Caught KeyboardInterrupt, %s" % err)
         except IndexError as err:
             logger.debug("Index error, %s" % err)
-        except OSError as err:
-            logger.debug("OS error: {0}".format(err))
             logger.debug("Not able to find/list/sort the files")
         except ValueError as err:
             logger.debug("No JSON object could be decoded")
-        except IndexError as err:
-            logger.debug("No log files present")
             sys.exit("Run command Again")
