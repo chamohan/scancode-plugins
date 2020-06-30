@@ -38,31 +38,16 @@ class AddRemoveLicenses:
         # check if the file exist and it is a valid yaml
         return os.path.exists(self.licensemetadatafile) and yaml.safe_load(self.licensemetadatafile)
 
-    def is_licencepolicy_notempty(self):
-        # Check if file exist and it is not empty
-        return os.path.exists(self.licensepolicyfile) and \
-            os.stat(self.licensepolicyfile).st_size != 0
-
-
     def copy_files_scancode(self):
         # Copy the files to scancode license location
         # adding exception handling
         try:
             copyfile(self.licensefile, self.license_file_targetlocation)
-        except IOError as err:
-            print("Unable to copy file. %s" % err)
-            sys.exit(1)
-        except:
-            print("Unexpected error:", sys.exc_info())
-            sys.exit(1)
-        try:
             copyfile(self.licensemetadatafile, self.metadata_file_targetlocation)
-        except IOError as err:
-            print("Unable to copy file. %s" % err)
-            sys.exit(1)
+            return "success"
         except:
             print("Unexpected error:", sys.exc_info())
-            sys.exit(1)
+            return "copy failed"
 
     def error_message(self, errortype):
         try:
@@ -87,14 +72,13 @@ class AddRemoveLicenses:
                     copyfiles = self.copy_files_scancode()
             else:
                 logger.debug("Files were not present")
-
+                sys.exit(1)
         except IOError as err:
             logger.debug("Could not copy files, %s"% err)
         except KeyboardInterrupt as err:
             logger.debug("Caught KeyboardInterrupt, %s" % err)
+            sys.exit(1)
         except IndexError as err:
             logger.debug("Index error, %s" % err)
             logger.debug("Not able to find/list/sort the files")
-        except ValueError as err:
-            logger.debug("No JSON object could be decoded")
             sys.exit("Run command Again")
