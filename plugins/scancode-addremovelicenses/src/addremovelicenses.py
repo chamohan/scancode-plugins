@@ -45,7 +45,7 @@ class AddRemoveLicenses:
             copyfile(self.licensefile, self.license_file_targetlocation)
             copyfile(self.licensemetadatafile, self.metadata_file_targetlocation)
             return "success"
-        except:
+        except ValueError:
             print("Unexpected error:", sys.exc_info())
             return "copy failed"
 
