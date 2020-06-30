@@ -59,9 +59,6 @@ class AddRemoveLicenses:
             logger.debug("Check the file, %s" % err)
 
     def add_scan_code_license(self):
-        checklicense = ""
-        checkmetadata = ""
-
         try:
             is_correct_extension = []
             checklicense = self.is_licencefile_notempty()
@@ -70,8 +67,10 @@ class AddRemoveLicenses:
                 is_correct_extension = self.extract_file_extension()
                 if is_correct_extension[0] == '.LICENSE' and is_correct_extension[1] == '.yml':
                     copyfiles = self.copy_files_scancode()
+                logger.debug("License installation was , %s", copyfiles)
+                return copyfiles
             else:
-                logger.debug("Files were not present")
+                logger.debug('Files were not present')
                 sys.exit(1)
         except IOError as err:
             logger.debug("Could not copy files, %s"% err)
