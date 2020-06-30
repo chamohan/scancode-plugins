@@ -4,14 +4,7 @@ import os
 import sys
 import yaml
 from shutil import copyfile
-import click
 
-@click.command()
-@click.option('--licencefile', default=1, help='Enter the path of License file')
-@click.option('--metadatafile', prompt='metadata file path', help = 'Enter the metadata file path')
-
-
-from shutil import copyfile
 logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
@@ -82,17 +75,6 @@ class AddRemoveLicenses:
         except ValueError as err:
             logger.debug("Check the file")
 
-    def update_licensepolicyfile(self):
-        #Update the licensepolicyfile
-        try:
-            with open(self.licensepolicyfilepath) as f:
-                data = json.load(f)
-                for i in data['files']:
-                    # update the licence policy file
-                    if i['license_policy']['label'] == 'Approved License':
-                        self.update_licencepolicyfile(self)
-
-
     def AddScanCodeLicense(self):
         checklicense = ""
         checkmetadata = ""
@@ -136,7 +118,5 @@ class AddRemoveLicenses:
 
         except RuntimeError:
             logger.debug("RuntimeError: {0}".format(err))
-
-
             sys.exit(1)
 
