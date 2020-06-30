@@ -10,7 +10,7 @@ logger.setLevel(logging.DEBUG)
 
 class AddRemoveLicenses:
 
-    def __init__(self, licensefile, licensemetadatafile, license_file_targetlocation, metadata_file_targetlocation ):
+    def __init__(self, licensefile, licensemetadatafile, license_file_targetlocation, metadata_file_targetlocation):
 
         self.licensefile = licensefile
         self.licensemetadatafile = licensemetadatafile
