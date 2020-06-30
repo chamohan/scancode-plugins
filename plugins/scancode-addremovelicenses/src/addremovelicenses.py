@@ -118,5 +118,3 @@ class AddRemoveLicenses:
 
         except RuntimeError:
             logger.debug("RuntimeError: {0}".format(err))
-            sys.exit(1)
-
