@@ -86,10 +86,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593425656785">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1593425656785" />
     <state x="406" y="142" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593098061154">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="406" y="142" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1593098061154" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1593425671417">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593425671417" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1593410515268">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

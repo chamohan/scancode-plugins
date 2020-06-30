@@ -19,10 +19,11 @@ logger.setLevel(logging.DEBUG)
 class AddRemoveLicenses:
      
 
-    def __init__(self, licensefile, licensemetadatafile):
+    def __init__(self, licensefile, licensemetadatafile, licensepolicyfile):
 
         self.licensefile = licensefile
         self.licensemetadatafile = licensemetadatafile
+        self.licensepolicyfile = licensepolicyfile
 
     def extract_file_extension(self):
         licenseFilepath= ""
@@ -44,6 +45,11 @@ class AddRemoveLicenses:
     def is_metadatafile_yaml(self, file_name):
         # check if the file exist and it is a valid yaml
         return os.path.exists(self.licensemetadatafile) and yaml.safe_load(self.licensemetadatafile)
+
+    def is_licencepolicy_notempty(self):
+        # Check if file exist and it is not empty
+        return os.path.exists(self.licensepolicyfile) and os.stat(self.licensepolicyfile).st_size != 0
+
 
     def copy_files_scancode(self, licenseFileTargetLocation, MetadataFileTargetLocation ):
         # Copy the files to scancode license location
@@ -76,6 +82,17 @@ class AddRemoveLicenses:
         except ValueError as err:
             logger.debug("Check the file")
 
+    def update_licensepolicyfile(self):
+        #Update the licensepolicyfile
+        try:
+            with open(self.licensepolicyfilepath) as f:
+                data = json.load(f)
+                for i in data['files']:
+                    # update the licence policy file
+                    if i['license_policy']['label'] == 'Approved License':
+                        self.update_licencepolicyfile(self)
+
+
     def AddScanCodeLicense(self):
         checklicense = ""
         checkmetadata = ""
@@ -107,22 +124,19 @@ class AddRemoveLicenses:
             logger.debug("No log files present")
             sys.exit("Run command Again")
 
-
+        # make changes in
         try:
             with open(self.licensemetadatafile) as f:
                 data = json.load(f)
                 modifications_counter = 0
                 for i in data['files']:
-                    # Checking keywords in file
-                    if i['keywordsline']:
-                        logger.debug("File Name %s" % (i['path']))
-                        logger.debug("Number of keywords %d" % (i['keywordsline']))
-                        for m in i['matchedlines']:
-                            keywordsCounter = keywordsCounter + 1
-
+                    # Checking for licence policy in  file
                         if i['license_policy']['label'] == 'Approved License':
-                        elif i['license_policy']['label'] == 'Prohibited Licenses':
+                            self.update_licencepolicyfile(self)
+
         except RuntimeError:
             logger.debug("RuntimeError: {0}".format(err))
+
+
             sys.exit(1)
 
