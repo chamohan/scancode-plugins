@@ -35,17 +35,4 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
-    keywords=[
-        'open source', 'scancode', 'addremovelicenses'
-    ],
-    install_requires=[
-        'scancode-toolkit',
-        'attr',
-    ],
-    entry_points={
-        'scancode_scan': [
-            'addremovelicenses = addremovelicenses.addremovelicenses:AddRemoveLicenses',
-        ],
-    }
-
 )
