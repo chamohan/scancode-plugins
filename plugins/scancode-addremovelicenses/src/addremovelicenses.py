@@ -1,10 +1,11 @@
 import logging
 import os
 import sys
+from logging import Logger
 from shutil import copyfile
 import yaml
 
-logger = logging.getLogger(__name__)
+logger: Logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
@@ -98,22 +99,14 @@ class AddLicenses:
 
         try:
             os.chdir(self.license_file_targetlocation)
-            # checking and deleting .LICENSE FILE
+            # remove  .LICENSE FILE
             if (os.path.isfile("self.license_key" + ".LICENSE")):
                 os.remove("self.license_key"+".LICENSE")
-            else:
-                logger.debug("License file does not exit")
+            # remove metadata file
             os.chdir(self.metadata_file_targetlocation)
             if (os.path.isfile("self.license_key"+".yml")):
                 os.remove("self.license"+".yml")
         except OSError as err:
             logger.debug("OS error: {0}".format(err))
             logger.debug("Not able to delete the  files")
-            sys.exit(totalIssues)
-
-
-
-
-
-
-
+            sys.exit(1)
