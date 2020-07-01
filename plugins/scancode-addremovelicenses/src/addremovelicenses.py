@@ -1,11 +1,11 @@
 import logging
 import os
 import sys
-from logging import Logger
+import logging
 from shutil import copyfile
 import yaml
 
-logger: Logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
