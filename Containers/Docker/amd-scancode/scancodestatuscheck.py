@@ -20,11 +20,11 @@ def errorchecking(dirpath):
         if os.path.exists(path):
             checkdirectory = scancodestatus.Scanstatus(path)
             exitcode = checkdirectory.scanLogResults()
+            return(exitcode)
     except IndexError as err:
         logger.debug("No log files present", err)
-        exitcode: int = 1
-
-    return exitcode
+        exitcode = 1
+        return(exitcode)
 
 if __name__ == "__main__":
     statusexitcode = errorchecking()
