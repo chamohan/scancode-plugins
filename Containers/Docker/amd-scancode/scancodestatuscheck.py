@@ -20,13 +20,10 @@ def errorchecking(dirpath):
             checkdirectory = scancodestatus.Scanstatus(path)
             exitcode = checkdirectory.scanLogResults()
             return exitcode
-    except OSError as err:
-        logger.debug("OS error: {0}".format(err))
-        logger.debug("Not able to find/list/sort the files")
     except IndexError as err:
-        logger.debug("No log files present")
-        totalIssues = totalIssues + 1
-        return totalIssues
+        logger.debug("No log files present", err)
+        exitcode: int = 1
+        return exitcode
 
 if __name__ == "__main__":
     statusexitcode = errorchecking()

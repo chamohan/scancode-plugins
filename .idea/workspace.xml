@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Containers/Docker/amd-scancode/scancodestatuscheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/Containers/Docker/amd-scancode/scancodestatuscheck.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,14 +94,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="406" y="142" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1593098061154" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1593425671417">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1593577224258">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593425671417" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1593576795033">
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593577224258" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1593684293650">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1593576795033" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1593684293650" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
