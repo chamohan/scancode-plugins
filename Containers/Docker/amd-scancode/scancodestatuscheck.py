@@ -13,20 +13,17 @@ logger.setLevel(logging.DEBUG)
 
 @click.command()
 @click.option('--dirpath', required=True, help='Directory path of scanresults. For example --dirpath=/path')
-def errorchecking(dirpath):
-    try:
-        path = dirpath
-        # Check if path exits
-        if os.path.exists(path):
-            checkdirectory = scancodestatus.Scanstatus(path)
-            exitcode = checkdirectory.scanLogResults()
-            return(exitcode)
-    except IndexError as err:
-        logger.debug("No log files present", err)
-        exitcode = 1
-        return(exitcode)
+def checkstatus(dirpath):
 
-if __name__ == "__main__":
-    statusexitcode = errorchecking()
-    print(statusexitcode)
-    sys.exit(statusexitcode)
+    if os.path.exists(dirpath):
+        checkdirectory = scancodestatus.Scanstatus(dirpath)
+        exitcode = checkdirectory.scanLogResults()
+        sys.exit(exitcode)
+    else:
+        logger.debug("No log files present")
+        print("No log files")
+        sys.exit(1)
+
+
+if __name__ == '__main__':
+    checkstatus()
