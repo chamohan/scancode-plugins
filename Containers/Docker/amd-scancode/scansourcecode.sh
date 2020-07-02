@@ -26,4 +26,4 @@ ${SCANCODE}  -clpeui  --package --processes `expr $(nproc --all) - 1` --classify
 
 # running analysis
 
-${PYTHON} ${STATUSSCRIPT} /${STATISTICS}>>/${OUT}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
+${PYTHON} ${STATUSSCRIPT} --dirpath="/${STATISTICS}">>/${OUT}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
