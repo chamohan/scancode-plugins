@@ -101,13 +101,16 @@ class Scanstatus:
                 logger.debug("The number of Approved Linceses are %s" % (approvedLicenses))
                 logger.debug("The Total number of issues are %s" % (totalIssues))
                 logger.debug("Failed")
-                sys.exit(totalIssues)
+                #sys.exit(totalIssues)
+                return totalIssues
             else:
                 logger.debug("The number of Approved Linceses are %s" % (approvedLicenses))
                 logger.debug("Tests Passed")
-                sys.exit(approvedLicenses)
+                return approvedLicenses
+                #sys.exit(approvedLicenses)
 
         except RuntimeError:
             logger.debug("RuntimeError: {0}".format(err))
-            sys.exit(totalIssues)
+            return totalIssues
+            #sys.exit(totalIssues)
 
