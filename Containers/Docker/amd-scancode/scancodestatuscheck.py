@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
-import click
-import scancodestatus
 import sys
 import os
 import logging
+import click
+import scancodestatus
+
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
