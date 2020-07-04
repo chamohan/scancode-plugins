@@ -3,10 +3,17 @@
 import sys
 import os
 import addremovelicensess
-import cancodestatus
 import logger
+import click
 
-def addlicense(dirpath):
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(stream=sys.stdout)
+logger.setLevel(logging.DEBUG)
+
+@click.command()
+@click.option('--dirpath', required=True, help='Directory path of scanresults. For example --dirpath=/path')
+def license(licenceoption):
     try:
         path = dirpath
         # Check if path exits
