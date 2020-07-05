@@ -12,8 +12,11 @@ logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
 @click.command()
-@click.option('--dirpath', required=True, help='Directory path of scanresults. For example --dirpath=/path')
-def license(licenceoption):
+@click.option('--licensefile', required=True, help("Directory path of Licences file, for example --licensefile=/gdb.LICENSE"))
+@click.option('--licensemetadata', required=True, help("Directory path of Licence's metadata file, for example --licensemetadata=/gdb.yml"))
+@click.option('--licensefile', required=True, help("Directory path of Licences file, for example --licensefile=/path"))
+@click.option('--licensefile', required=True, help("Directory path of Licences file, for example --licensefile=/path"))
+def addlicense(licenceoption):
     try:
         path = dirpath
         # Check if path exits
@@ -28,25 +31,6 @@ def license(licenceoption):
         logger.debug("Not able to find/list/sort the files")
     except IndexError as err:
         logger.debug("No log files present")
-        totalIssues = totalIssues + 1
-        return totalIssues
-
-def removelicense(dirpath):
-    try:
-        path = dirpath
-        # Check if path exits
-        if os.path.exists(path):
-            checkdirectory = scancodestatus.Scanstatus(path)
-            exitcode = checkdirectory.scanLogResults()
-            return exitcode
-        else:
-            return 1
-    except OSError as err:
-        logger.debug("OS error: {0}".format(err))
-        logger.debug("Not able to find/list/sort the files")
-    except IndexError as err:
-        logger.debug("No log files present")
-        totalIssues = totalIssues + 1
         return totalIssues
 
 if __name__ == "__main__":

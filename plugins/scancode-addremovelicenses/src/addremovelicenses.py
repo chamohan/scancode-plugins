@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
-class AddLicenses:
+class LicensesOps:
 
     def __init__(self, licensefile, licensemetadatafile, \
                  license_file_targetlocation, metadata_file_targetlocation, license_key):
