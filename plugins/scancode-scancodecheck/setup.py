@@ -31,5 +31,8 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
-
+    entry_points='''
+       [console_scripts]
+       scancodecheck=scancodecheck:checkstatus
+   ''',
 )
