@@ -1,0 +1,3 @@
+[scancode_scan]
+scancache = scan_cache.scan_cache:ScanCache
+
