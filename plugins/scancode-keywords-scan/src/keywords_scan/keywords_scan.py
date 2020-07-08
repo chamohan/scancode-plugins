@@ -54,7 +54,7 @@ class KeywordsLinesScanner(ScanPlugin):
         return get_keywordsscan
 
 
-def get_keywordsscan(location, keyword_scan='/amd-scancode/amd_licence_policy.yml', **kwargs):
+def get_keywordsscan(location, keyword_scan='/amd-scancode/keywordsdata.yml', **kwargs):
 
     codelines = 0
     keywordsline = 0
