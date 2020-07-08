@@ -43,6 +43,7 @@ setup(
     install_requires=[
         'scancode-toolkit',
         'attr',
+        'click',
     ],
     entry_points={
         'scancode_scan': [

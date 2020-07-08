@@ -12,6 +12,10 @@ import click
 import attr
 import yaml
 
+from os.path import exists
+from commoncode.fileutils import PATH_TYPE
+
+
 import logging
 import sys
 
@@ -32,27 +36,41 @@ class   KeywordsLinesScanner(ScanPlugin):
 
     )
 
+#    options = [
+#        CommandLineOption(('--keyword-scan',),
+#                          type=click.Path(
+#                              exists=True, file_okay=True, dir_okay=False,
+#                              readable=True, path_type=PATH_TYPE),
+#                          help='Use this yml file to read the keywords',
+#                          help_group=SCAN_GROUP,
+#                          sort_order=100),
+#    ]
+
     options = [
-        CommandLineOption(('--keywords-scan',),
-                          type=click.Path(
-                              exists=True, file_okay=True, dir_okay=False,
-                              readable=True),
+        CommandLineOption(('--keyword-scan',),
+                          multiple=False,
+                          metavar='FILE',
                           help='Use this yml file to read the keywords',
                           help_group=SCAN_GROUP,
-                          sort_order=100),
+                          sort_order=100)
     ]
 
-    def is_enabled(self, keywords_scan, **kwargs):
-        return keywords_scan
+  multiple=False,
+            metavar='FILE',
 
-    def get_scanner(self, keywords_scan, **kwargs):
+    def is_enabled(self, keyword_scan, **kwargs):
+        return keyword_scan
+
+    def get_scanner(self, keyword_scan, **kwargs):
         return get_keywordsscan
 
-def get_keywordsscan(location, keywords_scan, **kwargs):
+
+def get_keywordsscan(location, keyword_scan, **kwargs):
+
     codelines = 0
     keywordsline = 0
     matchedlines = []
-    codelines, keywordsline, matchedlines = file_lines_count(location, keywords_scan)
+    codelines, keywordsline, matchedlines = file_lines_count(location, keyword_scan)
 
     return OrderedDict(
         codelines=codelines,
@@ -61,23 +79,21 @@ def get_keywordsscan(location, keywords_scan, **kwargs):
     )
 
 
-def file_lines_count(location, keywords_scan):
+def file_lines_count(location, keyword_scan):
     """
     Return a tuple of (code, keywords, matching_keywords, line_numbers) line
     counts in a source text file at `location`.
     """
-    print("The location path", location)
-    print("The key words file", keywords_scan)
     code = 0
     keywords = 0
     line_numbers = []
     line_no = 0
     matched_lines = []
     searchList = []
-    print("The keywords list file", keywords_scan)
+    print("The keywords list file", keyword_scan)
 
     try:
-        with open(keywords_scan) as data:
+        with open(keyword_scan) as data:
             searchList = yaml.safe_load(data)
 
 
