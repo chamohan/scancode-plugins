@@ -8,6 +8,7 @@ from plugincode.scan import scan_impl
 from scancode import CommandLineOption
 from scancode import SCAN_GROUP
 
+import click
 import attr
 import yaml
 
@@ -33,10 +34,13 @@ class   KeywordsLinesScanner(ScanPlugin):
 
     options = [
         CommandLineOption(('--keywordsscan',),
-            is_flag=True, default=False,
-            help='  Scan the number of lines of code and search for keywords.',
-            help_group=SCAN_GROUP,
-            sort_order=100),
+                          type=click.Path(
+                              exists=True, file_okay=True, dir_okay=False,
+                              readable=True, path_type=PATH_TYPE),
+                          metavar = 'FILE',
+                          help= 'Use this yml file to read the keywords',
+                          help_group=SCAN_GROUP,
+                          sort_order=100),
     ]
 
     def is_enabled(self, keywordsscan, **kwargs):
@@ -45,12 +49,11 @@ class   KeywordsLinesScanner(ScanPlugin):
     def get_scanner(self, **kwargs):
         return get_keywordsscan
 
-
-def get_keywordsscan(location, **kwargs):
+def get_keywordsscan(location, keywordsscan, **kwargs):
     codelines = 0
     keywordsline = 0
     matchedlines = []
-    codelines, keywordsline, matchedlines = file_lines_count(location)
+    codelines, keywordsline, matchedlines = file_lines_count(location, keywordsscan)
 
     return OrderedDict(
         codelines=codelines,
@@ -59,12 +62,11 @@ def get_keywordsscan(location, **kwargs):
     )
 
 
-def file_lines_count(location):
+def file_lines_count(location, keywordsscan):
     """
     Return a tuple of (code, keywords, matching_keywords, line_numbers) line
     counts in a source text file at `location`.
     """
-
     code = 0
     keywords = 0
     line_numbers = []
@@ -72,9 +74,8 @@ def file_lines_count(location):
     matched_lines = []
     searchList = []
 
-
     try:
-        with open('/amd-scancode/keywordsdata.yml') as data:
+        with open(keywordsscan) as data:
             searchList = yaml.safe_load(data)
 
 
