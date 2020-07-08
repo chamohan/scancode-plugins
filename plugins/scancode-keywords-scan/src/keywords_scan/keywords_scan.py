@@ -53,7 +53,7 @@ class KeywordsLinesScanner(ScanPlugin):
         print("The end line")
         return keyword_scan
 
-    def get_scanner(self, **kwargs):
+    def get_scanner(self, keyword_scan, **kwargs):
         print("This is the message")
         print(keyword_scan)
         print("The end message")
