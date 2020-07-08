@@ -48,10 +48,11 @@ class KeywordsLinesScanner(ScanPlugin):
     ]
 
     def is_enabled(self, keyword_scan, **kwargs):
+        print(keyword_scan)
         return keyword_scan
 
     def get_scanner(self, keyword_scan='/amd-scancode/keywordsdata.yml', **kwargs):
-
+        print(keyword_scan)
         return get_keywordsscan
 
 
