@@ -36,28 +36,21 @@ class   KeywordsLinesScanner(ScanPlugin):
 
     )
 
-#    options = [
-#        CommandLineOption(('--keyword-scan',),
-#                          type=click.Path(
-#                              exists=True, file_okay=True, dir_okay=False,
-#                              readable=True, path_type=PATH_TYPE),
-#                          help='Use this yml file to read the keywords',
-#                          help_group=SCAN_GROUP,
-#                          sort_order=100),
-#    ]
-
     options = [
-        CommandLineOption(('--keyword-scan',),multiple=False,
+        CommandLineOption(('--keyword-scan',),
+                          type=click.Path(
+                              exists=True, file_okay=True, dir_okay=False,
+                              readable=True, path_type=PATH_TYPE),
                           metavar='FILE',
                           help='Use this yml file to read the keywords',
                           help_group=SCAN_GROUP,
-                          sort_order=100)
-        ]
+                          sort_order=100),
+    ]
 
     def is_enabled(self, keyword_scan, **kwargs):
         return keyword_scan
 
-    def get_scanner(self, location=keyword_scan, **kwargs):
+    def get_scanner(self, keyword_scan, **kwargs):
         return get_keywordsscan
 
 
@@ -86,12 +79,10 @@ def file_lines_count(location, keyword_scan):
     line_no = 0
     matched_lines = []
     searchList = []
-    print("The keywords list file", keyword_scan)
 
     try:
         with open(keyword_scan) as data:
             searchList = yaml.safe_load(data)
-
 
         if len(searchList) == 0:
             logger.debug("The file is either not yaml formatted or contain no data")
