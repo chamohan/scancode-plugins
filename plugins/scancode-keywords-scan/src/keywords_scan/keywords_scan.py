@@ -47,9 +47,11 @@ class KeywordsLinesScanner(ScanPlugin):
                           sort_order=100),
     ]
 
-#    def is_enabled(self, keyword_scan, **kwargs):
-#        print(keyword_scan)
-#       return keyword_scan
+    def is_enabled(self, keyword_scan, **kwargs):
+        print("The start line")
+        print(keyword_scan)
+        print("The end line")
+        return keyword_scan
 
     def get_scanner(self, **kwargs):
         print("This is the message")
