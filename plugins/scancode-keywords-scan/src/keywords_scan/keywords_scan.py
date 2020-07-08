@@ -47,12 +47,14 @@ class KeywordsLinesScanner(ScanPlugin):
                           sort_order=100),
     ]
 
-    def is_enabled(self, keyword_scan, **kwargs):
-        print(keyword_scan)
-        return keyword_scan
+#    def is_enabled(self, keyword_scan, **kwargs):
+#        print(keyword_scan)
+#       return keyword_scan
 
-    def get_scanner(self, keyword_scan='/amd-scancode/keywordsdata.yml', **kwargs):
+    def get_scanner(self, **kwargs):
+        print("This is the message")
         print(keyword_scan)
+        print("The end message")
         return get_keywordsscan
 
 
