@@ -47,16 +47,12 @@ class   KeywordsLinesScanner(ScanPlugin):
 #    ]
 
     options = [
-        CommandLineOption(('--keyword-scan',),
-                          multiple=False,
+        CommandLineOption(('--keyword-scan',),multiple=False,
                           metavar='FILE',
                           help='Use this yml file to read the keywords',
                           help_group=SCAN_GROUP,
                           sort_order=100)
-    ]
-
-  multiple=False,
-            metavar='FILE',
+        ]
 
     def is_enabled(self, keyword_scan, **kwargs):
         return keyword_scan
