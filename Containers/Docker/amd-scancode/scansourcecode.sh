@@ -23,7 +23,7 @@ function cleanup {
 }
 
 
-${SCANCODE}  -clpeui  --package --processes `expr $(nproc --all) - 1` --classify --keywordsscan ${KEYWORDSFILE}--verbose --full-root --json-pp /${STATISTICS}/$(date "+%Y.%m.%d-%H.%M.%S")-licenses.json /${SOURCECODE} --license-policy ${LICENSEPOLICY} --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses  --licence-modifications --custom-output /${ARTIFACTS}/$(date "+%Y.%m.%d-%H.%M.%S")-license-modification-report.html --custom-template ${LICENSETEMPLATE} >>/${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
+${SCANCODE}  -clpeui  --package --processes `expr $(nproc --all) - 1` --classify --keywords-scan ${KEYWORDSFILE} --verbose --full-root --json-pp /${STATISTICS}/$(date "+%Y.%m.%d-%H.%M.%S")-licenses.json /${SOURCECODE} --license-policy ${LICENSEPOLICY} --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses  --licence-modifications --custom-output /${ARTIFACTS}/$(date "+%Y.%m.%d-%H.%M.%S")-license-modification-report.html --custom-template ${LICENSETEMPLATE} >>/${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
 
 # running analysis
 

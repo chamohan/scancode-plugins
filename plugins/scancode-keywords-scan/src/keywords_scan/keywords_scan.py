@@ -33,27 +33,26 @@ class   KeywordsLinesScanner(ScanPlugin):
     )
 
     options = [
-        CommandLineOption(('--keywordsscan',),
+        CommandLineOption(('--keywords-scan',),
                           type=click.Path(
                               exists=True, file_okay=True, dir_okay=False,
-                              readable=True, path_type=PATH_TYPE),
-                          metavar = 'FILE',
-                          help= 'Use this yml file to read the keywords',
+                              readable=True),
+                          help='Use this yml file to read the keywords',
                           help_group=SCAN_GROUP,
                           sort_order=100),
     ]
 
-    def is_enabled(self, keywordsscan, **kwargs):
-        return keywordsscan
+    def is_enabled(self, keywords_scan, **kwargs):
+        return keywords_scan
 
-    def get_scanner(self, **kwargs):
+    def get_scanner(self, keywords_scan, **kwargs):
         return get_keywordsscan
 
-def get_keywordsscan(location, keywordsscan, **kwargs):
+def get_keywordsscan(location, keywords_scan, **kwargs):
     codelines = 0
     keywordsline = 0
     matchedlines = []
-    codelines, keywordsline, matchedlines = file_lines_count(location, keywordsscan)
+    codelines, keywordsline, matchedlines = file_lines_count(location, keywords_scan)
 
     return OrderedDict(
         codelines=codelines,
@@ -62,32 +61,34 @@ def get_keywordsscan(location, keywordsscan, **kwargs):
     )
 
 
-def file_lines_count(location, keywordsscan):
+def file_lines_count(location, keywords_scan):
     """
     Return a tuple of (code, keywords, matching_keywords, line_numbers) line
     counts in a source text file at `location`.
     """
+    print("The location path", location)
+    print("The key words file", keywords_scan)
     code = 0
     keywords = 0
     line_numbers = []
     line_no = 0
     matched_lines = []
     searchList = []
+    print("The keywords list file", keywords_scan)
 
     try:
-        with open(keywordsscan) as data:
+        with open(keywords_scan) as data:
             searchList = yaml.safe_load(data)
 
 
         if len(searchList) == 0:
-            log_debug("The file is either not yaml formatted or contain no data") 
+            logger.debug("The file is either not yaml formatted or contain no data")
             sys.exit("The file is either not yaml formatted or contain no data")
 
     except IOError:
-        log_debug("File not accessible")
+        logger.debug("File not accessible")
         sys.exit("File not accessible")
 
-    
     try:
         with open(location, 'rb') as lines:
 
@@ -102,9 +103,8 @@ def file_lines_count(location, keywordsscan):
                 else:
                     code += 1
     except IOError:
-        log_debug("/amd-scancode/keywordsdata.yml File not accessible")
+        logger.debug("File not accessible")
         sys.exit("File not accessible")
-       
     return code, keywords, matched_lines
 
 
