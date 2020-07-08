@@ -50,7 +50,7 @@ class KeywordsLinesScanner(ScanPlugin):
     def is_enabled(self, keyword_scan, **kwargs):
         return keyword_scan
 
-    def get_scanner(self, keyword_scan=options[0], **kwargs):
+    def get_scanner(self, keyword_scan=options[1], **kwargs):
         return get_keywordsscan
 
 
