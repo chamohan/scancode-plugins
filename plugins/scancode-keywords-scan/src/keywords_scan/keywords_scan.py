@@ -50,11 +50,11 @@ class KeywordsLinesScanner(ScanPlugin):
     def is_enabled(self, keyword_scan, **kwargs):
         return keyword_scan
 
-    def get_scanner(self, keyword_scan=keyword_scan, **kwargs):
+    def get_scanner(self, **kwargs):
         return get_keywordsscan
 
 
-def get_keywordsscan(location, keyword_scan, **kwargs):
+def get_keywordsscan(location, keyword_scan=keyword_scan, **kwargs):
 
     codelines = 0
     keywordsline = 0
