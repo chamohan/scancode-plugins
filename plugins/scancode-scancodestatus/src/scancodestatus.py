@@ -5,8 +5,11 @@ import sys
 import datetime
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(stream=sys.stdout)
-logger.setLevel(logging.DEBUG)
+logging.basicConfig(
+    format='%(asctime)s %(levelname)-8s %(message)s',
+    level=logging.INFO,
+    datefmt='%Y-%m-%d %H:%M:%S',
+    stream=sys.stdout)
 
 class Scanstatus:
 
