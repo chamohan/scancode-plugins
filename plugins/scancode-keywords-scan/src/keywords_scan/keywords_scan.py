@@ -1,5 +1,5 @@
+from functools import *
 import re
-
 from collections import OrderedDict
 from commoncode.filetype import counter
 from commoncode import filetype
@@ -51,18 +51,16 @@ class KeywordsLinesScanner(ScanPlugin):
         return keyword_scan
 
     def get_scanner(self, **kwargs):
-        return get_keywordsscan
+        return partial(get_keywordsscan, keyword_scan=kwargs['keyword_scan'])
 
 
-def get_keywordsscan(location, keyword_scan='/amd-scancode/keywordsdata.yml', **kwargs):
+#def get_keywordsscan(location, keyword_scan='/amd-scancode/amd_licence_policy.yml', **kwargs):
+def get_keywordsscan(location, keyword_scan, **kwargs):
 
     codelines = 0
     keywordsline = 0
     matchedlines = []
     codelines, keywordsline, matchedlines = file_lines_count(location, keyword_scan)
-    print("This is the begining")
-    print(keyword_scan)
-    print("this is end line")
     return OrderedDict(
         codelines=codelines,
         keywordsline=keywordsline,
