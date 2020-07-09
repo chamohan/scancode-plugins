@@ -8,10 +8,9 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
-class Scanstatus:
-     
+class Scanstatus():
 
-    def __init__(self, directorypath, jsonlogpath):
+    def __init__(self, directorypath, jsonlogpath=None):
 
         self.directorypath = directorypath 
         self.jsonlogpath = jsonlogpath
