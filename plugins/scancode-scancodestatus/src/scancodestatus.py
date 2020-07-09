@@ -107,7 +107,7 @@ class Scanstatus:
                     with open("self.jsonlogpath/datetime.datetime.now().-summary.json", 'w') as\
                             jsonoutfile:
                         json.dump(summary_report, jsonoutfile)
-                except as err:
+                except RuntimeError as err:
                     logger.debug("OS error: {0}".format(err))
                     logger.debug("Not able to the write json file")
                 return(totalIssues)
