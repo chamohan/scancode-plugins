@@ -35,5 +35,8 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
+    install_requires=[
+        'datetime',
+    ],
 
 )
