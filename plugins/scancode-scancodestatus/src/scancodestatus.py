@@ -114,8 +114,6 @@ class Scanstatus:
             if modifications_counter == 0:
                 summary_report ['number_of_approved_licenses'] = approvedLicenses 
                 summary_report['Status'] = "Passed"
-                print("self.jsonlogpath")
-                print("json log file path")
                 return(approvedLicenses)
         except RuntimeError as err:
             logger.debug("RuntimeError: {0}".format(err))
