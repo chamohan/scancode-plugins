@@ -5,10 +5,12 @@ import logging
 import click
 import scancodestatus
 
-
 logger = logging.getLogger(__name__)
-logging.basicConfig(stream=sys.stdout)
-logger.setLevel(logging.DEBUG)
+logging.basicConfig(
+    format="'time': %(asctime)-15s, 'filename': %(name)s, 'level':  %(levelname)s ,'linenumber': %(lineno)d, 'message': %(message)s",
+    datefmt='%Y-%m-%d %H:%M:%S',
+    level=logging.INFO,
+    stream=sys.stdout)
 
 @click.command()
 @click.option('--dirpath', type=click.Path(exists=True, dir_okay=True),\

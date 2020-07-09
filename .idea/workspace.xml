@@ -20,7 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-scancodestatus/src/scancodestatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancodestatus/src/scancodestatus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Containers/Docker/amd-scancode/scancodestatuscheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/Containers/Docker/amd-scancode/scancodestatuscheck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-addremovelicenses/src/addremovelicenses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-keywords-scan/src/keywords_scan/keywords_scan.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-keywords-scan/src/keywords_scan/keywords_scan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-licence-modifications/src/licence_modifications/licence_modifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-licence-modifications/src/licence_modifications/licence_modifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-no-licenses/src/no_licenses/no_licenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-no-licenses/src/no_licenses/no_licenses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-only-licenses-titles/src/only_licenses_titles/only_licenses_titles.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-only-licenses-titles/src/only_licenses_titles/only_licenses_titles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-scancodecheck/src/scancodecheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancodecheck/src/scancodecheck.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,21 +107,5 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1594228222151" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/plugins/scancode-only-licenses-titles/src/only_licenses_titles/only_licenses_titles.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/plugins/scancode-scancodecheck/src/scancodecheck.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
