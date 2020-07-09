@@ -23,7 +23,6 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
-
 @scan_impl
 class KeywordsLinesScanner(ScanPlugin):
     """
@@ -53,8 +52,6 @@ class KeywordsLinesScanner(ScanPlugin):
     def get_scanner(self, **kwargs):
         return partial(get_keywordsscan, keyword_scan=kwargs['keyword_scan'])
 
-
-#def get_keywordsscan(location, keyword_scan='/amd-scancode/amd_licence_policy.yml', **kwargs):
 def get_keywordsscan(location, keyword_scan, **kwargs):
 
     codelines = 0
