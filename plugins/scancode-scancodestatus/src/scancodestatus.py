@@ -6,9 +6,9 @@ import datetime
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(
-    format='%(asctime)s %(levelname)-8s %(message)s',
-    level=logging.INFO,
+    format="%(asctime)s — %(name)s — %(levelname)s — %(funcName)s:%(lineno)d — %(message)s",
     datefmt='%Y-%m-%d %H:%M:%S',
+    level=logging.INFO,
     stream=sys.stdout)
 
 class Scanstatus:
