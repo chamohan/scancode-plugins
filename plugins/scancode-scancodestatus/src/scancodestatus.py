@@ -2,7 +2,7 @@ import json
 import logging
 import os
 import sys
-from datetime import datetime
+import datetime
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout)
@@ -103,7 +103,13 @@ class Scanstatus:
                 summary_report['number_of_approved_licenses'] = approvedLicenses
                 summary_report['Total_issues'] = totalIssues
                 summary_report['Status'] = "Failed"
-                jsonReport(self.jsonlogpath, summary_report)
+                try:
+                    with open("self.jsonlogpath/datetime.datetime.now().-summary.json", 'w') as\
+                            jsonoutfile:
+                        json.dump(summary_report, jsonoutfile)
+                except as err:
+                    logger.debug("OS error: {0}".format(err))
+                    logger.debug("Not able to the write json file")
                 return(totalIssues)
      
             if modifications_counter == 0:
@@ -111,20 +117,9 @@ class Scanstatus:
                 summary_report['Status'] = "Passed"
                 print("self.jsonlogpath")
                 print("json log file path")
-                jsonReport(self.jsonlogpath, summary_report)
                 return(approvedLicenses)
-        except RuntimeError:
+        except RuntimeError as err:
             logger.debug("RuntimeError: {0}".format(err))
             return(totalIssues)
 
 
-def jsonReport(jsonlogpath, summary_report):
-    """ create summary report as json"""
-    try:
-        print("chekcing json logfile")
-        print("jsonlogpath/datetime.datetime.now().-summary.json")
-        with open("jsonlogpath/datetime.datetime.now().-summary.json", 'w') as jsonoutfile:
-            json.dump(summary_report, jsonoutfile)
-    except OSError as err:
-        logger.debug("OS error: {0}".format(err))
-        logger.debug("Not able to the write json file")
