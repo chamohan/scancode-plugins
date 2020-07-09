@@ -102,8 +102,10 @@ class Scanstatus:
                 summary_report['number_of_approved_licenses'] = approvedLicenses
                 summary_report['Total_issues'] = totalIssues
                 summary_report['Status'] = "Failed"
+                json_file_name = datetime.datetime.now()
+                json_file_name.str(json_file_name)+'.summary.json'
                 try:
-                    with open(self.jsonlogpath/datetime.now().summary.json, 'w') as\
+                    with open(self.jsonlogpath/json_file_name, 'w') as\
                             jsonoutfile:
                         json.dump(summary_report, jsonoutfile)
                 except RuntimeError as err:
