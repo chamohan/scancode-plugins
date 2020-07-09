@@ -109,6 +109,8 @@ class Scanstatus:
             if modifications_counter == 0:
                 summary_report ['number_of_approved_licenses'] = approvedLicenses 
                 summary_report['Status'] = "Passed"
+                print("self.jsonlogpath")
+                print("json log file path")
                 jsonReport(self.jsonlogpath, summary_report)
                 return(approvedLicenses)
         except RuntimeError:
@@ -119,6 +121,8 @@ class Scanstatus:
 def jsonReport(jsonlogpath, summary_report):
     """ create summary report as json"""
     try:
+        print("chekcing json logfile")
+        print("jsonlogpath/datetime.datetime.now().-summary.json")
         with open("jsonlogpath/datetime.datetime.now().-summary.json", 'w') as jsonoutfile:
             json.dump(summary_report, jsonoutfile)
     except OSError as err:
