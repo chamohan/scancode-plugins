@@ -42,12 +42,12 @@ class Scanstatus:
             # latest  json report file name created with time stamp
             filename = files[-1]
         except OSError as err:
-            logger.debug("OS error: {0}".format(err))
-            logger.debug("Not able to find/list/sort the files")
+            logger.info("OS error: {0}".format(err))
+            logger.info("Not able to find/list/sort the files")
         except ValueError as err:
-            logger.debug("No JSON object could be decoded")
+            logger.info("No JSON object could be decoded")
         except IndexError as err:
-            logger.debug("No log files present") 
+            logger.info("No log files present")
             totalIssues = totalIssues + 1
             sys.exit(totalIssues)
          
@@ -59,8 +59,8 @@ class Scanstatus:
                 for i in data['files']:
                     # Checking keywords in file
                     if i['keywordsline']:
-                        logger.debug("File Name %s" % (i['path']))
-                        logger.debug("Number of keywords %d" % (i['keywordsline']))
+                        logger.info("File Name %s" % (i['path']))
+                        logger.info("Number of keywords %d" % (i['keywordsline']))
                         for m in i['matchedlines']:
                             keywordsCounter = keywordsCounter + 1
 
@@ -70,7 +70,7 @@ class Scanstatus:
                         files_with_license = files_with_license + 1
                     else:
                         files_without_license = files_without_license + 1
-                        logger.debug("File Name %s is under %s License" % (i['path'], i['no_licenses']))
+                        logger.info("File Name %s is under %s License" % (i['path'], i['no_licenses']))
 
                     # Checking Not Approved Licences and Approved License
 
@@ -79,10 +79,10 @@ class Scanstatus:
                     else:
                         if i['license_policy']['label'] == 'Approved License':
                             approvedLicenses = approvedLicenses + 1
-                            logger.debug("The file %s has %s" % (i['path'], i['license_policy']['label']))
+                            logger.info("The file %s has %s" % (i['path'], i['license_policy']['label']))
                         elif i['license_policy']['label'] == 'Prohibited Licenses':
                             prohibitedLicenses = prohibitedLicenses + 1
-                            logger.debug("The file %s has %s" % (i['path'], i['license_policy']['label']))
+                            logger.info("The file %s has %s" % (i['path'], i['license_policy']['label']))
 
                     # Checking license Modifications in files
 
@@ -113,8 +113,8 @@ class Scanstatus:
                             jsonoutfile:
                         json.dump(summary_report, jsonoutfile)
                 except RuntimeError as err:
-                    logger.debug("OS error: {0}".format(err))
-                    logger.debug("Not able to the write json file")
+                    logger.info("OS error: {0}".format(err))
+                    logger.info("Not able to the write json file")
                 return(totalIssues)
      
             if modifications_counter == 0:
@@ -122,7 +122,7 @@ class Scanstatus:
                 summary_report['Status'] = "Passed"
                 return(approvedLicenses)
         except RuntimeError as err:
-            logger.debug("RuntimeError: {0}".format(err))
+            logger.info("RuntimeError: {0}".format(err))
             return(totalIssues)
 
 
