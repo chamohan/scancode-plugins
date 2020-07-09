@@ -11,7 +11,9 @@ logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
 @click.command()
-@click.option('--dirpath', type=click.Path(exists=True, dir_okay=True), required=True, help='Directory path of scanresults. For example --dirpath=/path')
+@click.option('--dirpath', type=click.Path(exists=True, dir_okay=True),\
+              required=True, help='Directory path of scanresults.\
+              For example --dirpath=/path')
 @click.option('--jsonfilepath', type=click.Path(exists=True, dir_okay=True), required=True, help='Directory path of scanresults. For example --jsonfilepath=/jsonfilepath')
 def checkstatus(dirpath, jsonfilepath):
     """  cli will check the json result file and create a summary report """
