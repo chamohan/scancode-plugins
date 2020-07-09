@@ -10,9 +10,19 @@ logger.setLevel(logging.DEBUG)
 class Scanstatus:
      
 
-    def __init__(self, directorypath):
+    def __init__(self, directorypath, jsonlogpath):
 
         self.directorypath = directorypath 
+        self.jsonlogpath = jsonlogpath
+
+    def jsonReport(self, summary_report):
+        try:
+            with open("self.jsonlogpath/summary.json", 'w') as jsonoutfile:
+                json.dump(summary_report, jsonoutfile)
+         except OSError as err:
+            logger.debug("OS error: {0}".format(err))
+            logger.debug("Not able to the write json file")
+
 
     def scanLogResults(self):
         code = 0
@@ -93,19 +103,20 @@ class Scanstatus:
 
             if modifications_counter > 0:
                 totalIssues = (modifications_counter + keywordsCounter + prohibitedLicenses + no_license)
-                logger.debug("-----Summary Report------")
-                logger.debug("The total number of files containing no linceses are %d" % (no_license))
-                logger.debug("Number of linceses Modifications %d" % (modifications_counter))
-                logger.debug("The number of times keywords were present in files %s" % (keywordsCounter))
-                logger.debug("The number of Prohibited Licenses are %s" % (prohibitedLicenses))
-                logger.debug("The number of Approved Linceses are %s" % (approvedLicenses))
-                logger.debug("The Total number of issues are %s" % (totalIssues))
-                logger.debug("Failed")
+                summary_report['files_without_licenses'] = no_license 
+                summary_report['number_of_license_modifications'] = modifications_counter
+                summary_report['number_of_times_keywords'] = keywordsCounter
+                summary_report['number_of_prohibited_licenses'] = prohibitedLicenses
+                summary_report['number_of_approved_licenses'] = approvedLicenses
+                summary_report['Total_issues'] = totalIssues
+                summary_report['Status'] = "Failed"
+                jsonReport(summary_report) 
                 return(totalIssues)
      
             if modifications_counter == 0:
-                logger.debug("The number of Approved Linceses are %s" % (approvedLicenses))
-                logger.debug("Tests Passed")
+                summary_report ['number_of_approved_licenses'] = approvedLicenses 
+                summary_report['Status'] = "Passed"
+                jsonReport(summary_report)
                 return(approvedLicenses)
         except RuntimeError:
             logger.debug("RuntimeError: {0}".format(err))

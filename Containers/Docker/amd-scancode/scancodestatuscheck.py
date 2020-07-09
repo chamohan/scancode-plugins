@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import sys
-import os
 import logging
 import click
 import scancodestatus
@@ -12,17 +11,14 @@ logging.basicConfig(stream=sys.stdout)
 logger.setLevel(logging.DEBUG)
 
 @click.command()
-@click.option('--dirpath', required=True, help='Directory path of scanresults. For example --dirpath=/path')
-def checkstatus(dirpath):
-
-    if os.path.exists(dirpath):
-        checkdirectory = scancodestatus.Scanstatus(dirpath)
-        exitcode = checkdirectory.scanLogResults()
-        sys.exit(exitcode)
-    else:
-        logger.debug("No log files present")
-        print("No log files")
-        sys.exit(1)
+@click.option('--dirpath', type=click.Path(exists=True, dir_okay=True), required=True, help='Directory path of scanresults. For example --dirpath=/path')
+@click.option('--jsonfilepath', type=click.Path(exists=True, dir_okay=True), required=True, help='Directory path of scanresults. For example --jsonfilepath=/jsonfilepath')
+def checkstatus(dirpath, jsonfilepath):
+    """  cli will check the json result file and create a summary report """
+    checkdirectory = scancodestatus.Scanstatus(dirpath, jsonfilepath)
+    exitcode = checkdirectory.scanLogResults()
+    logger.debug("The exicode is exitcode")
+    sys.exit(exitcode)
 
 
 if __name__ == '__main__':
