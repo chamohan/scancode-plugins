@@ -10,7 +10,7 @@ logger.setLevel(logging.DEBUG)
 
 class Scanstatus():
 
-    def __init__(self, directorypath, jsonlogpath=None):
+    def __init__(self):
 
         self.directorypath = directorypath 
         self.jsonlogpath = jsonlogpath
