@@ -103,7 +103,7 @@ class Scanstatus:
                 summary_report['Total_issues'] = totalIssues
                 summary_report['Status'] = "Failed"
                 json_file_name = datetime.datetime.now()
-                json_file_name= json_file_name.str(json_file_name)+'.summary.json'
+                json_file_name= str(json_file_name)+'.summary.json'
                 try:
                     with open(self.jsonlogpath/json_file_name, 'w') as\
                             jsonoutfile:
