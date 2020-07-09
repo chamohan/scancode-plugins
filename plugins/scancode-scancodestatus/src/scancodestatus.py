@@ -38,6 +38,7 @@ class Scanstatus:
         approvedLicenses = 0
         prohibitedLicenses = 0
         totalIssues = 0
+        summary_report = {}
          
 
         try:
