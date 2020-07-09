@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/plugins/scancode-scancodestatus/src/scancodestatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancodestatus/src/scancodestatus.py" afterDir="false" />
-    </list>
+    <list default="true" id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
