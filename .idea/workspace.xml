@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2972578-47e2-4089-86ad-5d05d4b19a08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Containers/Docker/amd-scancode/scancodestatuscheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/Containers/Docker/amd-scancode/scancodestatuscheck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/scancode-scancodestatus/src/scancodestatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/scancode-scancodestatus/src/scancodestatus.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,15 +49,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/plugins/scancode-exceptioncache" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-exceptioncache" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-addremovelicenses\src" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-addremovelicenses" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-scancache\src\scancache" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-addremovelicenses\src\adremovelicenses" />
       <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-ignorefiles\src\ingorefiles" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chamohan\scancode-plugins-latest\plugins\scancode-exceptioncache" />
     </key>
   </component>
   <component name="SvnConfiguration">

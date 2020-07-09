@@ -19,7 +19,7 @@ class Scanstatus:
         try:
             with open("self.jsonlogpath/summary.json", 'w') as jsonoutfile:
                 json.dump(summary_report, jsonoutfile)
-         except OSError as err:
+        except OSError as err:
             logger.debug("OS error: {0}".format(err))
             logger.debug("Not able to the write json file")
 
