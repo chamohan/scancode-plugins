@@ -29,6 +29,7 @@ class Scanstatus:
         
         approvedLicenses      = 0
         prohibitedLicenses    = 0
+        license_files         = 0
         totalIssues           = 0
         summary_report        = {}
 
@@ -60,6 +61,8 @@ class Scanstatus:
                 
                 for files_info  in data['files']:
                     issue_counter = False 
+
+                    if not os.path.isdir(files_info['path']):
 
                     # Checking keywords in file
                     if files_info['keywordsline']:
@@ -105,17 +108,26 @@ class Scanstatus:
                                 issue_counter = True
                                 modifications_counter = modifications_counter + 1
 
+                    if files_info['is_license_text']:
+                        license_files = license_files + 1
+                        issue_counter = True
+                        logger.info("The file %s is a licence file" % (files_info['is_license_text']))
+                        
+
+
+
                     if issue_counter:
                         summary_report[files_info['path']]                          = {}
                         summary_report[files_info['path']]['File_name']             = files_info['name']
                         summary_report[files_info['path']]['File_path']             = files_info['path']
-                        summary_report[files_info['path']]['keywords_line']         = files_info['keywordsline']
-                        summary_report[files_info['path']]['matched_lines']         = files_info['matchedlines']
-                        summary_report[files_info['path']]['licences']              = files_info['no_licenses']
+                        summary_report[files_info['path']]['Keywords_line']         = files_info['keywordsline']
+                        summary_report[files_info['path']]['Matched_lines']         = files_info['matchedlines']
+                        summary_report[files_info['path']]['Licences']              = files_info['no_licenses']
                         summary_report[files_info['path']]['licence_Policy']        = files_info['license_policy']
                         summary_report[files_info['path']]['Licence_Modifications'] = files_info['licence_modifications']
+                        summary_report[files_info['path']]['Only_Licence_File']          = files_info['is_license_text']
 
-            totalIssues =  modifications_counter + keywordsCounter + prohibitedLicenses + files_without_license 
+            totalIssues =  modifications_counter + keywordsCounter + prohibitedLicenses + files_without_license + license_files 
             
             summary_report['Status'] = "Passed"
             
@@ -129,6 +141,7 @@ class Scanstatus:
             summary_report['number_of_prohibited_licenses'] = prohibitedLicenses
             
             summary_report['number_of_approved_licenses'] = approvedLicenses
+            summary_report['number_of_only_licence_files'] = license_files 
             summary_report['Total_issues'] = totalIssues
                 
             summary_file_name = datetime.datetime.now()
