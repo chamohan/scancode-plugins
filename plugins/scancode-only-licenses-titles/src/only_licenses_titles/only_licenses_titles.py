@@ -59,4 +59,5 @@ class OnlyLicensesTitles(PostScanPlugin):
             for singlelinetitles in resource_start_line:
                 resource.only_licenses_titles = {"LineStart": resource_start_line,
 						    "LineEnd": resource_end_line}
+                logger.info("file is only a license file")
                 codebase.save_resource(resource)

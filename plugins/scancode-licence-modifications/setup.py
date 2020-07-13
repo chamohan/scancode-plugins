@@ -11,7 +11,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-DESC = '''A ScanCode post-scan plugin to list the files with no licenses'''
+DESC = '''A ScanCode post-scan plugin to list the files Modified licence'''
 
 setup(
     name='scancode-licence-modifications',
@@ -20,8 +20,8 @@ setup(
     description=DESC,
     long_description=DESC,
     author='Chander',
-    author_email='chamohan@@amd.com',
-    url='https://github.com/chamohan/scancode-plugins',
+    author_email='chamohan@amd.com',
+    url='https://gitlab.rocm.amd.com/swca/amd-scancode-plugins.git',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
@@ -33,7 +33,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
     keywords=[

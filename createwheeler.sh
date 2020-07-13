@@ -17,8 +17,7 @@ function cleanup {
   exit 1
 }
 
-
-
+# Compile the plugin code into wheel package and copy them to installation directory of plugins
 function buildPlugins {
 
     ${MKDIR} -p ${PWD}/Containers/Docker/plugins
@@ -36,6 +35,5 @@ function buildPlugins {
         ${CP} -R ${dir}/dist/* ${pluginDir}
     done
 }
-
 
 buildPlugins

@@ -23,7 +23,7 @@ function cleanup {
 }
 
 
-${SCANCODE}  -clpeui  --package --processes `expr $(nproc --all) - 1` --classify --keyword-scan ${KEYWORDSFILE} --verbose --full-root --json-pp /${STATISTICS}/$(date "+%Y.%m.%d-%H.%M.%S")-licenses.json /${SOURCECODE} --license-policy ${LICENSEPOLICY} --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses  --licence-modifications >>/${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
+${SCANCODE}  -clpeui  --package --processes `expr $(nproc --all) - 1` --classify --keyword-scan ${KEYWORDSFILE} --verbose --full-root --json-pp /${STATISTICS}/$(date "+%Y.%m.%d-%H.%M.%S")-licenses.json /${SOURCECODE} --license-policy ${LICENSEPOLICY} --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag  --no-licenses --licence-modifications >>/${LOGS}/$(date "+%Y.%m.%d-%H.%M.%S")-logfile 2>&1
 
 # running analysis
 

@@ -1,4 +1,4 @@
-from functools import *
+from functools import partial
 import re
 from collections import OrderedDict
 from commoncode.filetype import counter

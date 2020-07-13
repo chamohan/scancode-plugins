@@ -51,7 +51,7 @@ class LicenceModifications(PostScanPlugin):
 
             except AttributeError:
                 # add licence_modifications regardless if there is license modification info or not
-                logger.debug("Adding licence_modifications regardless if there is license modification info or not")
+                logger.info("Adding licence_modifications regardless if there is license modification info or not")
                 resource.licence_modifications = {}
                 codebase.save_resource(resource)
                 continue

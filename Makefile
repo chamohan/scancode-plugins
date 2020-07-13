@@ -23,4 +23,4 @@ build-nc: ## Build the container without caching
 	docker build --no-cache -t $(APP_NAME) -f Containers/Docker/Dockerfile .
 
 stop: ## Stop and remove a running image and container
-	docker rmi -f  $(APP_NAME):latest
+	docker rmi -f $(APP_NAME):latest

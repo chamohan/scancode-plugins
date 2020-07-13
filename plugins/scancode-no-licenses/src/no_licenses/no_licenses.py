@@ -1,5 +1,5 @@
 # Copyright (c) 2019 AMD Inc. and others. All rights reserved.
-# For any issue please write to chamohan@amd.com
+# for any issue please email to chamohan@amd.com
 
 import attr
 
@@ -7,15 +7,7 @@ from plugincode.post_scan import PostScanPlugin
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
 
-import logging
 import sys
-
-logger = logging.getLogger(__name__)
-logging.basicConfig(
-    format="'time': %(asctime)-15s, 'filename': %(name)s, 'level':  %(levelname)s ,'linenumber': %(lineno)d, 'message': %(message)s",
-    datefmt='%Y-%m-%d %H:%M:%S',
-    level=logging.INFO,
-    stream=sys.stdout)
 
 class NoLicenses(PostScanPlugin):
 
@@ -24,6 +16,9 @@ class NoLicenses(PostScanPlugin):
     """
 
     resource_attributes = dict(no_licenses=attr.ib(default=attr.Factory(dict)))
+
+    sort_order = 9
+
 
     options = [
         CommandLineOption(('--no-licenses',),
